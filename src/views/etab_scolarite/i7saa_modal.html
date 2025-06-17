@@ -1,0 +1,101 @@
+<div id="i7saa-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">مساعد الاحصاء</div>
+  <div class="content">
+    <section class="ui form segment" id="form_civil">
+      <div id="i7saNotify"></div>
+      <br />
+      <div>
+        <button id="$emptyDatabaseIstiksaa" class="btn btn-danger hacen mb-3">
+          تفريغ بيانات الاحصاء
+        </button>
+
+        <div class="note hacen d-flex p-2 fs-2 w-100 mb-2">
+          <div class="pr-6">
+            <strong>
+              <b> ملاحظة هامة: </b>
+            </strong>
+            يجب اختيار الطور أولا من خلال الذهاب لأيقونة ضبط الاعدادات وملأ
+            البيانات اللازمة واختيار الكيفية الناسبة لحساب العمر.
+          </div>
+        </div>
+        <div class="note hacen d-flex p-2 fs-2 w-100 mb-2">
+          <div class="pr-6">
+            <strong>
+              <b> يجب إعادة تفريغ بيانات الاحصاء في التحديث 1.0.75 </b>
+            </strong>
+          </div>
+        </div>
+        <div class="note wr hacen d-flex p-2 fs-2 w-100 mb-2">
+          <div class="pr-6">
+            <strong>
+              <b> هام جدا: </b>
+            </strong>
+            بعد تحميل بيانات الوافدين ثم بيانات المغادرين، يجب إعادة تحميل
+            بيانات الوافدين لاستراجاع التلاميذ الوافدين بعد المغادرة.
+          </div>
+        </div>
+        <div id="$spin5" class="snip f-column" style="display: none"></div>
+        <h2 id="$waitText5" class="mt-2 hacen d-none text-black">
+          جاري تحميل البيانات من الرقمنة
+        </h2>
+        <div class="d-flex gap-1 mt-3 brd-2 mb-5 p-3">
+          <select
+            class="h-38 w-100 fs-2 p-1 px-3 hacen"
+            id="$dateType"
+            disabled
+          >
+            <option>اختر كيفية حساب العمر</option>
+            <option value="1">الحساب إلى تاريخ اليوم</option>
+            <option value="2" selected>الحساب حسب السنة الميلادية</option>
+            <option value="3">الحساب لآخر السنة</option>
+            <option value="4">حساب العمر حسب تاريخ مقترح</option>
+          </select>
+          <input
+            type="date"
+            class="h-38 w-100 fs-2 p-1 px-3 hacen"
+            id="$cusTime"
+            disabled
+          />
+        </div>
+        <section dir="rtl">
+          <select class="h-38 w-100 fs-2 p-1 px-3 hacen" id="$year">
+            <option selected disabled>اختر السنة الدراسية</option>
+            <option value="2023">2024-2023</option>
+            <option value="2024">2025-2024</option>
+          </select>
+          <div class="d-flex gap-1 mt-3">
+            <button class="btn-n w-25" id="$downList">تحميل القوائم</button>
+            <button class="btn-n w-25 d-none" id="$downListmoiid">
+              قوائم المعيدين
+            </button>
+            <button class="btn-n w-25 d-none" id="$downListw">
+              قوائم الوافدين
+            </button>
+            <button class="btn-n w-25 d-none" id="$downListm">
+              قوائم المغادرين لسنة
+            </button>
+            <a href="/istiksaa" class="btn-n w-25" target="_blank">
+              الانتقال لقائمة الطباعة
+            </a>
+          </div>
+          <div class="d-flex gap-1 mt-3">
+            <a
+              href="/istiksaa_prof"
+              class="btn btn-dark w-100 fs-3"
+              target="_blank"
+            >
+              طباعة احصاء الأساتذة
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="ui error message"></div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

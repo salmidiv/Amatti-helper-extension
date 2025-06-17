@@ -1,0 +1,37 @@
+{
+  "name": "SALMI TAHAR AMATTI v2",
+  "description": "إضافة مساعدة للرقمنة في جميع الأطوار موجهة للتعليم الجزائري من برمجة الأستاذ سالمي الطاهر",
+  "author": "SALMI TAHAR",
+  "version": "1.1.25",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "css": ["assets/css/font.css", "assets/css/app.css"],
+      "matches": [
+        "https://amatti.education.dz/*",
+        "https://taqiim.education.dz/*"
+      ],
+      "js": [
+        "assets/js/jquery-3.6.2.min.js",
+        "assets/js/dexie.js",
+        "content-script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["notifications"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "index.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["content-script.js", "core/*", "src/*", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="A4 hacen" dir="rtl">
+  <div class="sheet p-5mm">
+    <h2 class="fs-2 hacen text-center">احصاء خاص بالأساتذة</h2>
+    <div class="d-flex gap-1 mt-3 no-print">
+      <select class="form-control w-75 hacen fs-3" id="$mada"></select>
+      <button id="$showResult" class="btn btn-info w-25 hacen fs-3">عرض</button>
+    </div>
+    <br />
+    <h2 class="text-center">
+      <span class="mb-3 d-block w-100 text-center">
+        وضعية أساتذة التعليم الثانوي. للسنة الدراسية: 2023-2024
+      </span>
+      <span class="mt-3 d-block w-100 text-center">
+        مادة التكوين :
+        <span class="b-1 px-3" id="$madaName"></span>
+      </span>
+    </h2>
+    <br />
+    <div>
+      <h1 class="mb-1 fs-3 fw-bold" id="mobrizTitle"></h1>
+      <table class="table text-center" id="mobriz"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="mokawinTitle"></h1>
+      <table class="table text-center" id="mokawin"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="raiisTitle"></h1>
+      <table class="table text-center" id="raiis"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="monasikTitle"></h1>
+      <table class="table text-center" id="monasik"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="normalTitle"></h1>
+      <table class="table text-center" id="normal"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="cemTitle"></h1>
+      <table class="table text-center" id="cem"></table>
+
+      <h1 class="mb-1 fs-3 fw-bold" id="emiTitle"></h1>
+      <table class="table text-center" id="emi"></table>
+    </div>
+  </div>
+</body>

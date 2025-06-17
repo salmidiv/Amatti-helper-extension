@@ -1,0 +1,102 @@
+<head>
+  <title> </title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    input {
+      padding: 0.9rem 0.75rem !important;
+    }
+    .input-control {
+      font-size: 1.1rem;
+      height: auto;
+      width: 100%;
+      background: #fff;
+      border: 1px solid rgba(34, 36, 38, 0.15);
+      border-radius: 0.28571429rem;
+      box-shadow: 0 0 0 0 transparent inset;
+      padding: 0.62em 1em;
+      color: rgba(0, 0, 0, 0.87);
+      -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+      transition: color 0.1s ease, border-color 0.1s ease;
+    }
+    @media print {
+      .input-control {
+        border: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="print A4 hacen">
+  <div class="sheet p-10mm jaz" dir="rtl">
+    <header id="header"></header>
+
+    <div dir="rtl" class="fs-4 m-1 d-flex flex-end">
+      <div class="fs-xl m-3 w-40">
+        <p class="fs-3 m-0 text-center fw-bold">المـــــــــديــــــــــــر</p>
+        <p class="fs-3 m-0">
+          إلى السيد :
+          <input
+            type="text"
+            id="$father"
+            class="input-control p-0 w-70 px-3 hacen h-32"
+          />
+        </p>
+        <p class="fs-3 m-0">
+          ولي التلميذ :
+          <span id="$student"></span>
+        </p>
+        <p class="fs-3 m-0">
+          قسم :
+          <span id="$niv"></span>
+        </p>
+      </div>
+    </div>
+    <!-- /header -->
+    <div class="subject">
+      <h1 class="m-2 text-center" id="$title"></h1>
+    </div>
+    <!-- /page title -->
+    <section class="content">
+      <p class="fs-xl m-3 w-100">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; يؤسفني أن
+        أخبركم أن إبنكم / ابنتكم قد وجه إليه(ا) هذا <b>التوبيخ الكتابي</b> وذلك
+        للأسباب التالية:
+      </p>
+      <p class="fs-xl m-3 w-100">
+        <textarea
+          id="$sabab"
+          class="input-control hacen"
+          cols="87"
+          max-rows="6"
+          rows="6"
+          style="height: 150px; width: 95%; resize: none"
+          placeholder="أكتب الأسباب هنا ..."
+        ></textarea>
+      </p>
+      <p class="fs-xl m-3 w-100">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;و عليه
+        تتحملون المسؤولية الكاملة كولي ، و في حالة التخلي عن هذه المسؤولية فإن
+        إدارة المؤسسة مضطرة إلى تطبيق أقصى العقوبات التأديبية المنصوص عليها في
+        القانون المعمول به في وزارة التربية في حق ابنكم / ابنتكم*.
+      </p>
+      <div class="d-flex between-content align-items-center">
+        <p class="m-2 fs-2 fw-bold">نسخة محولة إلى:</p>
+        <footer id="footer"></footer>
+      </div>
+      <ul class="h4 m-2 fs-lg">
+        <li>ولـــــــــــي التلميــــــــذ</li>
+        <br />
+        <li>ملــــــــــف التلميــــــــذ</li>
+      </ul>
+
+      <div class="d-flex between-content align-items-center">
+        <p class="m-2 fs-2 fw-bold w-50 text-left">مستشار التوجيه</p>
+        <p class="m-2 fs-2 fw-bold w-50 text-left">مصادقة مدير المؤسسة</p>
+      </div>
+    </section>
+  </div>
+  <!-- /sheet -->
+</body>

@@ -1,0 +1,54 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+      margin-top: 0.3in;
+      padding: 0 !important;
+    }
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  </style>
+  <title>قائمة التلاميذ</title>
+</head>
+
+<body class="print A4">
+  <div class="sheet h-auto p-4 m-h-A4">
+    <div id="header"></div>
+    <h1 class="m-0 p-0 hacen fs-2 text-center" id="$title"></h1>
+    <div class="content">
+      <table class="table mb-0 fs-4 hacen text-right" id="one">
+        <thead>
+          <tr>
+            <th class="th_s" style="width: 30px">الرقم</th>
+            <th class="th_s" style="width: 3cm">الاسم واللقب</th>
+            <th class="th_s" style="width: 80px">تاريخ الميلاد</th>
+            <th class="th_s" style="width: 35px">الإعادة</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="footer"></div>
+  </div>
+  <div class="sheet h-auto p-4 m-h-A4 d-none" id="math">
+    <div id="header2"></div>
+    <h1 class="m-0 p-0 hacen fs-2 text-center" id="$title2"></h1>
+    <div class="content">
+      <table class="table mb-0 fs-4 hacen text-right" id="two">
+        <thead>
+          <tr>
+            <th class="th_s" style="width: 30px">الرقم</th>
+            <th class="th_s" style="width: 3cm">الاسم واللقب</th>
+            <th class="th_s" style="width: 80px">تاريخ الميلاد</th>
+            <th class="th_s" style="width: 35px">الإعادة</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="footer2"></div>
+  </div>
+</body>

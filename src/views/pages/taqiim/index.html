@@ -1,0 +1,163 @@
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .custom-file-input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    .custom-file-input {
+      padding: 3px;
+      border-radius: 6px;
+    }
+    .custom-file-input::before {
+      content: "اختر ملف";
+      display: inline-block;
+      border: 1px solid #251e1e;
+      border-radius: 6px;
+      padding: 5px;
+      outline: none;
+      white-space: nowrap;
+      cursor: pointer;
+      text-shadow: 1px 1px #fa3939;
+      font-weight: 700;
+      font-size: 10pt;
+    }
+    .custom-file-input:hover::before {
+      border-color: black;
+    }
+    .custom-file-input:active::before {
+      color: rgb(255, 255, 255);
+      background: rgb(116, 10, 78);
+    }
+
+    .custom-file-input:focus {
+      background: #1e3636 !important;
+      border-color: #161313 !important;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+      gap: 16px; /* Optional: adds space between items */
+    }
+    .flex-item {
+      flex: 1 1 calc(50% - 16px); /* Take 50% of the container width minus the gap */
+      box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    }
+  </style>
+  <title>المساعد في إنجاز تقارير تقييم المكتسبات</title>
+</head>
+<body class="m-0 p-0 A4" dir="rtl">
+  <nav class="hacen text-center btn-Emerald py-3">
+    <div id="logo"></div>
+    <h2>المساعد في إنجاز تقارير تقييم المكتسبات</h2>
+    <div class="px-6">
+      <div class="w-70 mt-3 flex gap-3">
+        <select class="hacen input-control p-0 h-38" id="module"></select>
+        <input
+          class="custom-file-input hacen h-38 btn-dark"
+          type="file"
+          id="file"
+          multiple
+        />
+        <select class="hacen input-control p-0 h-38 student" id="type">
+          <option value="">اختر نوع التحليل</option>
+          <option value="1">حسب المادة</option>
+          <option value="2">حسب الفوج</option>
+        </select>
+        <select class="hacen input-control p-0 h-38 student" id="calc">
+          <option value="">اختر طريقة الاختيار</option>
+          <option value="1">حسب الثلث</option>
+          <option value="2">حسب الربع</option>
+          <option value="3" selected>مرجع نصف أكبر مجموع لـ C+D</option>
+        </select>
+        <label class="modir" for="amaz">
+          <input type="checkbox" id="amaz" />
+          غير معني بالأمازيغية
+        </label>
+        <button
+          type="button"
+          id="state"
+          class="btn btn-Amber p-1 px-4 h-38 hacen"
+        >
+          تحليل
+        </button>
+      </div>
+    </div>
+    <div
+      id="$notify"
+      class="w-100 mt-3"
+      style="width: 90% !important; margin: 0px auto"
+    >
+      <div class="note hacen d-flex p-2 fs-2 w-100 mb-2">
+        <div class="pr-6">
+          <div class="fw-bold fs-3">
+            <strong>كيفية العمل: </strong>
+            بالنسبة للفوج، قم باختيار المادة ثم حدد ملف الفوج(دون تغيير محتواه)،
+            بعد ذلك اختر نوع التحليل حسب الفوج، ثم حدد طريقة اختيار المعايير، ثم
+            اضغط على تحليل.
+            <br />
+            بالنسبة للمادة، قم باختيار المادة، ثم قم بتحديد جميع ملفات الأفواج
+            الخاصة بك، بعد ذلك اختر نوع التحليل حسب المادة، وحدد مرجع الاختيار
+            ثم تحليل.
+          </div>
+        </div>
+      </div>
+      <div class="note wr hacen d-flex p-2 fs-2 w-100 mb-2">
+        <div class="pr-6">
+          <div class="fw-bold fs-3">
+            <strong>بالنسبة للتقرير الخاص بالمدير : </strong>
+            يجب أولا استخدام الإضافة لتحميل ملف اكسل جاهزة مباشرة من صفحة تقييم
+            المكتسبات، أيضا يجب اتباع الرابط الخاص بالرقمنة وليس منصة تقييم ليتم
+            جلب أسماء التلاميذ تلقائيا للتقرير
+          </div>
+        </div>
+      </div>
+      <div class="note wr hacen d-flex p-2 fs-2 w-100 mb-2">
+        <div class="pr-6">
+          <div class="fw-bold fs-3">
+            <strong>ملاحظات هامة: </strong>
+            لتعمل الإضافة على التقرير الاجمالي للمدير يجب تعطيل إضافة الأخ خالد
+            بوشارب مؤقتا
+            <br />
+            تم إصلاح مشكل اللغة العربية
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sheet p-10mm h-auto student">
+    <h1 class="font-bold hacen text-center mb-5" id="title"></h1>
+    <h2 class="font-bold hacen mb-2">أ-تعيين المعايير ذات الأداء المنخفض:</h2>
+    <table class="table text-center mt-3 hacen" id="tableone"></table>
+
+    <h2 class="font-bold hacen mt-3">
+      ب -التعيين التوصيفي للمعايير ذات الأداء المنخفض:
+    </h2>
+    <table class="table text-sm text-center mt-3 hacen" id="tabletwo"></table>
+  </div>
+  <div class="sheet p-10mm h-auto student">
+    <h2 class="font-bold hacen mt-3">
+      قوائم التلاميذ المعنيين بالمعالجة حسب الكفاءة والمعيار المستخلصين من
+      الجداول في الأعلى
+    </h2>
+    <table class="table" id="lists"></table>
+  </div>
+  <div class="sheet p-10mm h-auto modir">
+    <h2 class="font-bold hacen mt-3">
+      أ/إحصائيات القراءة العمودية والتقرير التوصيفي لكل مادة تعليمية (قاعدة
+      بيانات إجمالية)
+    </h2>
+    <table class="table hacen" id="tone"></table>
+  </div>
+  <div class="sheet p-10mm h-auto modir">
+    <h2 class="font-bold hacen mt-3">
+      ب/إحصائيات القراءة الأفقية لتفئة تلاميذ الكوكبة إلى مجموعات (قاعدة بيانات
+      إجمالية)
+    </h2>
+    <table class="table hacen" id="ttwo"></table>
+  </div>
+</body>

@@ -1,0 +1,34 @@
+<div class="left-section flex end-align gap-1 hacen" dir="rtl">
+  <button class="btn btn-dark hacen fs-3 rakba-excel">
+    <i class="ui print icon"></i>تصدير الرغبات لملف اكسل
+  </button>
+  <button
+    class="btn btn-info hacen fs-3 excel-rak"
+    onclick="$('#form_excel-rak').modal('show')"
+  >
+    ادراج الرغبات من ملف اكسل
+  </button>
+</div>
+
+<div id="$modals"></div>
+
+<div class="action-btn flex gap-4">
+  <!--
+  <button class="btn btn-Pink">حجز التقديرات</button>
+  -->
+  <button class="btn btn-Pink stat-table">التحقق من ادراج الرغبات</button>
+</div>
+<style>
+  .action-btn {
+    position: fixed;
+    bottom: 44px;
+    z-index: 100;
+    left: 100px;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+  }
+</style>

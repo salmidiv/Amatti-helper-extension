@@ -1,0 +1,253 @@
+<head>
+  <style>
+    @page {
+      size: A4 landscape;
+      margin-top: 0.3rem;
+    }
+    * {
+      list-style: none;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f6fa;
+    }
+
+    .wrapper .sidebar {
+      background: rgb(23 41 52);
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 225px;
+      height: 100%;
+      padding: 20px 0;
+      transition: all 0.5s ease;
+    }
+
+    .wrapper .section {
+      width: calc(100% - 225px);
+      margin-right: 225px;
+      transition: all 0.5s ease;
+    }
+    .wrapper .section .container {
+      margin: 30px;
+      background: #fff;
+      padding: 50px;
+      line-height: 28px;
+      border-radius: 0.4rem;
+      box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
+    }
+
+    body.active .wrapper .sidebar {
+      left: -225px;
+    }
+
+    body.active .wrapper .section {
+      margin-left: 0;
+      width: 100%;
+    }
+    th.rotate {
+      height: 145px;
+      white-space: nowrap;
+    }
+
+    th.rotate > div {
+      transform: translate(0px, -50px) rotate(-90deg);
+      width: 35px;
+      text-align: center;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    tbody td {
+      text-align: center;
+      vertical-align: middle;
+      color: black;
+    }
+
+    tbody td.top-right {
+      text-align: right;
+      vertical-align: initial;
+    }
+
+    .girl {
+      background-color: #ffbcbc;
+    }
+
+    .moy {
+      background-color: #e3baba;
+    }
+
+    .moafa {
+      background-color: #dce5f7;
+    }
+
+    .moiid {
+      background-color: #9b9b9b;
+    }
+
+    .no-color {
+      background: transparent !important;
+    }
+    @media print {
+      html,
+      body {
+        background-color: #fff !important;
+      }
+
+      thead th {
+        border: 1px solid #000;
+      }
+
+      .no-print {
+        display: none;
+      }
+      .wrapper .section {
+        width: 100%;
+        margin-right: 0 !important;
+      }
+      .wrapper .section .container {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+      }
+      body.A44.landscapea .sheets {
+        width: 297mm;
+        height: 210mm;
+      }
+
+      .sheet.p-5mm {
+        padding: 5mm;
+      }
+    }
+  </style>
+</head>
+
+<body class="hacen A44 landscapea" dir="rtl">
+  <div class="wrapper">
+    <div class="section">
+      <div class="container sheets p-5mm">
+        <div class="hacen fs-3 mb-3" id="finalstudentslists"></div>
+        <div class="hacen fs-3 mb-3" id="success-rates-section"></div>
+        <div id="general-stat" class="d-none">
+          <h2 id="$t2" class="hacen fw-bold mb-3"></h2>
+          <table class="table hacen fs-3">
+            <thead>
+              <tr>
+                <th rowspan="2">عدد التلاميذ</th>
+                <th rowspan="2">معدل القسم</th>
+                <th colspan="3" id="$bys">الذكور</th>
+                <th colspan="3" id="$gls">الإناث</th>
+                <th colspan="3" id="$mis">المعيدين</th>
+              </tr>
+              <tr>
+                <th>العدد</th>
+                <th id="$mmmm">&gt;=10</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th id="$mmm">&gt;=10</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th id="$mm">&gt;=10</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody id="$gStats" class="text-center"></tbody>
+          </table>
+        </div>
+        <h2 id="$t1" class="hacen fw-bold mb-3"></h2>
+        <div class="hacen fs-3 mb-3" id="stat-table"></div>
+        <div id="stat-by-module" class="stat-by-module d-none">
+          <h2 class="hacen fw-bold mb-3">4 - حصيلة نتائج التقويم حسب المواد</h2>
+          <table class="table hacen fs-4">
+            <thead align="center">
+              <tr>
+                <th rowspan="2">المادة</th>
+                <th rowspan="2">معفى</th>
+                <th colspan="2" id="$one">&gt;=10</th>
+                <th colspan="2" id="$two">0-8.99</th>
+                <th colspan="2" id="$three">9-9.99</th>
+                <th colspan="2" id="$four">10-11.99</th>
+                <th colspan="2" id="$five">12-13.99</th>
+                <th colspan="2" id="$six">14-15.99</th>
+                <th colspan="2" id="$seven">16-17.99</th>
+                <th colspan="2" id="$eight">18-20</th>
+              </tr>
+              <tr>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+                <th>العدد</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody id="$cont" class="text-center"></tbody>
+          </table>
+        </div>
+        <h2 id="$tit" class="hacen fw-bold mb-3 d-none">
+          5 - حصيلة نتائج التقويم حسب مجالات المعدلات
+        </h2>
+        <div class="hacen fs-3 mb-3" id="s-note-table"></div>
+
+        <div class="hacen fs-3 mb-3" id="ijaza-section"></div>
+        <div class="hacen fs-3 mb-3 d-none" id="averages-range-section">
+          <h2 class="hacen fw-bold mb-3">
+            8 - تحليل معدلات التلاميذ حسب المجالات
+          </h2>
+          <table class="table fs-4">
+            <thead>
+              <tr>
+                <th>الرقم</th>
+                <th>لقب واسم التلميذ</th>
+                <th>تاريخ الميلاد</th>
+                <th>العمر</th>
+                <th>المعدل</th>
+                <th>الإجازة</th>
+              </tr>
+            </thead>
+            <tbody id="$dataTab"></tbody>
+          </table>
+        </div>
+        <div
+          class="hacen fs-3 mb-3 chart-container"
+          id="chart-container"
+          style="position: relative; height: 200px; width: 70vw; margin: 0 auto"
+        >
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar no-print p-3">
+      <h2 class="mb-3 text-center fw-bold fs-2 text-white">
+        وثيقة مقارنة بين نتائج الفصلين
+      </h2>
+      <select
+        class="input-control hacen h-38 fs-3 no p-0 px-3"
+        id="$anneschool"
+      >
+        <option value="" selected="selected">--الرجاء الفصل ----</option>
+        <option value="20242">الفصل الثاني 2024-2025</option>
+      </select>
+      <br />
+      <select
+        id="$divi"
+        class="input-control hacen h-38 fs-3 no p-0 px-3 mt-4"
+      ></select>
+    </div>
+  </div>
+</body>

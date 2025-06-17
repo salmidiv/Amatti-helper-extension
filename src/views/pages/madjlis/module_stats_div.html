@@ -1,0 +1,109 @@
+<head>
+  <title>احصائيات حسب المواد</title>
+  <style>
+    @page {
+      size: A4 landscape;
+    }
+
+    .sheet {
+      width: 95%;
+    }
+
+    @media print {
+      .no {
+        display: none;
+      }
+    }
+
+    thead th {
+      background: transparent !important;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    tbody td {
+      text-align: center;
+      vertical-align: middle;
+      color: black;
+    }
+
+    th.rotate {
+      height: 130px;
+      white-space: nowrap;
+    }
+
+    th.rotate > div {
+      transform: translate(0px, -33px) rotate(-90deg);
+      width: 35px;
+      text-align: center;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media print {
+      .page-break {
+        page-break-before: always;
+      }
+
+      html {
+        background-color: transparent !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="A4 landscape" dir="rtl">
+  <div class="sheet p-5mm hacen h-auto">
+    <div class="preloader d-flex" id="$preloader">
+      <div class="overflow"></div>
+      <span class="preloader-spin"></span>
+    </div>
+    <div class="d-flex gap-1">
+      <select class="input-control hacen h-38 fs-2 no p-0" id="$anneschool">
+        <option value="" selected="selected">--الرجاء الاختيار ----</option>
+        <option value="20243">الفصل الثالث 2024-2025</option>
+        <option value="20242">الفصل الثاني 2024-2025</option>
+        <option value="20241">الفصل الأول 2024-2025</option>
+        <option value="20233">الفصل الثالث 2023-2024</option>
+        <option value="20232">الفصل الثاني 2023-2024</option>
+        <option value="20231">الفصل الأول 2023-2024</option>
+        <option value="20223">الفصل الثالث 2022-2023</option>
+        <option value="20222">الفصل الثاني 2022-2023</option>
+        <option value="20221">الفصل الأول 2022-2023</option>
+        <option value="20213">الفصل الثالث 2021-2022</option>
+        <option value="20212">الفصل الثاني 2021-2022</option>
+        <option value="20211">الفصل الأول 2021-2022</option>
+        <option value="20202">الفصل الثاني 2020-2021</option>
+        <option value="20201">الفصل الأول 2020-2021</option>
+        <option value="20192">الفصل الثاني 2019-2020</option>
+        <option value="20191">الفصل الأول 2019-2020</option>
+        <option value="20183">الفصل الثالث 2018-2019</option>
+        <option value="20182">الفصل الثاني 2018-2019</option>
+        <option value="20181">الفصل الأول 2018-2019</option>
+        <option value="20173">الفصل الثالث 2017-2018</option>
+        <option value="20172">الفصل الثاني 2017-2018</option>
+        <option value="20171">الفصل الأول 2017-2018</option>
+      </select>
+      <select class="input-control hacen h-38 fs-2 no p-0" id="$divi"></select>
+      <select id="$ty" class="input-control hacen h-38 fs-2 no p-0">
+        <option value="1" selected>الاختبار</option>
+        <option value="2">فرض + اختبار</option>
+      </select>
+    </div>
+
+    <h1 id="$title" class="fs-1 m-1 fw-bold text-center">
+      حصيلة نتائج <span id="$gTy"></span> لقسم: <span id="$className2"></span>
+    </h1>
+    <table class="table fs-sm">
+      <thead id="$the"></thead>
+      <tbody id="data"></tbody>
+    </table>
+  </div>
+
+  <div class="sheet p-5mm hacen h-auto">
+    <div class="hacen fs-3 mb-3" id="stat-table"></div>
+  </div>
+  <div class="sheet p-5mm hacen h-auto">
+    <div class="hacen fs-3 mb-3" id="students-list-table"></div>
+  </div>
+</body>

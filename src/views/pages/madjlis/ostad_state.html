@@ -1,0 +1,186 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+      margin-top: 0.3rem;
+    }
+    * {
+      list-style: none;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f6fa;
+    }
+
+    .wrapper .sidebar {
+      background: rgb(5, 68, 104);
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 225px;
+      height: 100%;
+      padding: 20px 0;
+      transition: all 0.5s ease;
+    }
+
+    .wrapper .section {
+      width: calc(100% - 225px);
+      margin-right: 225px;
+      transition: all 0.5s ease;
+    }
+    .wrapper .section .container {
+      margin: 30px;
+      background: #fff;
+      padding: 50px;
+      line-height: 28px;
+      border-radius: 0.4rem;
+      box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
+    }
+
+    body.active .wrapper .sidebar {
+      left: -225px;
+    }
+
+    body.active .wrapper .section {
+      margin-left: 0;
+      width: 100%;
+    }
+    th.rotate {
+      height: 145px;
+      white-space: nowrap;
+    }
+
+    th.rotate > div {
+      transform: translate(0px, -50px) rotate(-90deg);
+      width: 35px;
+      text-align: center;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    tbody td {
+      text-align: center;
+      vertical-align: middle;
+      color: black;
+    }
+
+    tbody td.top-right {
+      text-align: right;
+      vertical-align: initial;
+    }
+
+    .girl {
+      background-color: #ffbcbc;
+    }
+
+    .moy {
+      background-color: #e3baba;
+    }
+
+    .moafa {
+      background-color: #dce5f7;
+    }
+
+    .moiid {
+      background-color: #9b9b9b;
+    }
+
+    .no-color {
+      background: transparent !important;
+    }
+    @media print {
+      html,
+      body {
+        background-color: #fff !important;
+      }
+
+      thead th {
+        border: 1px solid #000;
+      }
+
+      .no-print {
+        display: none;
+      }
+      .wrapper .section {
+        width: 100%;
+        margin-right: 0 !important;
+      }
+      .wrapper .section .container {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+      }
+      body.A44.landscapea .sheets {
+        width: 297mm;
+        height: 210mm;
+      }
+
+      .p-5mm {
+        padding: 5mm;
+      }
+    }
+  </style>
+</head>
+
+<body class="hacen A4" dir="rtl">
+  <div class="wrapper">
+    <div class="section p-5mm">
+      <div class="container sheetq">
+        <h2 class="text-center m-0 title">محضر قرار مجلس القسم</h2>
+        <p class="text-center mb-3 fs-5 m-0" style="color: #3d3d3d">
+          أنتجت هذه الوثيقة بواسطة إضافة SALMI TAHAR AMATTI V2
+        </p>
+        <table>
+          <thead class="one-head"></thead>
+          <tbody class="one-body"></tbody>
+        </table>
+        <h2 class="mt-3 text-center fw-bold fs-2 ijazaTitle"></h2>
+        <table>
+          <thead class="two-head"></thead>
+          <tbody class="two-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sidebar no-print p-3">
+      <h2 class="mb-3 text-center fw-bold fs-2 text-white">محاضر مجلس القسم</h2>
+      <select
+        class="input-control hacen h-38 fs-3 no p-0 px-3"
+        id="$anneschool"
+      >
+        <option value="" selected="selected">--الرجاء الفصل ----</option>
+        <option value="20243">الفصل الثالث 2024-2025</option>
+        <option value="20242">الفصل الثاني 2024-2025</option>
+        <option value="20241">الفصل الأول 2024-2025</option>
+        <option value="20233">الفصل الثالث 2023-2024</option>
+        <option value="20232">الفصل الثاني 2023-2024</option>
+        <option value="20231">الفصل الأول 2023-2024</option>
+        <option value="20223">الفصل الثالث 2022-2023</option>
+        <option value="20222">الفصل الثاني 2022-2023</option>
+        <option value="20221">الفصل الأول 2022-2023</option>
+        <option value="20213">الفصل الثالث 2021-2022</option>
+        <option value="20212">الفصل الثاني 2021-2022</option>
+        <option value="20211">الفصل الأول 2021-2022</option>
+        <option value="20202">الفصل الثاني 2020-2021</option>
+        <option value="20201">الفصل الأول 2020-2021</option>
+        <option value="20192">الفصل الثاني 2019-2020</option>
+        <option value="20191">الفصل الأول 2019-2020</option>
+        <option value="20183">الفصل الثالث 2018-2019</option>
+        <option value="20182">الفصل الثاني 2018-2019</option>
+        <option value="20181">الفصل الأول 2018-2019</option>
+        <option value="20173">الفصل الثالث 2017-2018</option>
+        <option value="20172">الفصل الثاني 2017-2018</option>
+        <option value="20171">الفصل الأول 2017-2018</option>
+      </select>
+      <br />
+      <select
+        id="$divi"
+        class="input-control hacen h-38 fs-3 no p-0 px-3 mt-4"
+      ></select>
+    </div>
+  </div>
+</body>

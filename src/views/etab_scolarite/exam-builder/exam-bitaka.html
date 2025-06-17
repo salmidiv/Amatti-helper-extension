@@ -1,0 +1,98 @@
+<head>
+  <title> </title>
+  <style>
+    * {
+      font-family: "hacen" !important;
+    }
+
+    @page {
+      size: A4;
+    }
+  </style>
+</head>
+
+<body class="print A4" dir="rtl">
+  <div class="sheet p-5mm">
+    <div id="header"></div>
+    <div class="fs-1 fw-bold text-center my-3">بطاقة تقنية</div>
+    <div style="font-weight: bold" id="$titleBitaka"></div>
+    <table
+      dir="rtl"
+      align="center"
+      width="100%"
+      border="1"
+      cellpadding="1"
+      cellspacing="0"
+      nobr="true"
+    >
+      <thead>
+        <tr>
+          <th><span style="font-weight: bold">التلاميذ</span></th>
+          <th><span style="font-weight: bold">المستثنون</span></th>
+          <th><span style="font-weight: bold">الذكور</span></th>
+          <th><span style="font-weight: bold">الإناث</span></th>
+          <th><span style="font-weight: bold">المستويات</span></th>
+          <th><span style="font-weight: bold">القاعات</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr height="60">
+          <td align="center">
+            <span style="font-weight: bold" id="$studentsNbr"></span>
+          </td>
+          <td align="center">
+            <span style="font-weight: bold" id="$excStudents"></span>
+          </td>
+          <td align="center">
+            <span style="font-weight: bold" id="$boysNbr"></span>
+          </td>
+          <td align="center">
+            <span style="font-weight: bold" id="$girlsNbr"></span>
+          </td>
+          <td align="center">
+            <span style="font-weight: bold" id="$nivs"></span>
+          </td>
+          <td align="center">
+            <span style="font-weight: bold" id="$cham"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table
+      dir="rtl"
+      style="width: 100%"
+      border="1"
+      cellpadding="1"
+      cellspacing="0"
+      align="center"
+      nobr="true"
+    >
+      <thead>
+        <tr>
+          <th style="width: 3%" align="center">
+            <div>الترتيب</div>
+          </th>
+          <th style="width: 10%" align="center">
+            <div>رقم القاعة</div>
+          </th>
+          <th style="width: 10%" align="center">
+            <div>عدد التلاميذ</div>
+          </th>
+          <th style="width: 35%" align="center">
+            <div>المستوى والشعبة</div>
+          </th>
+          <th style="width: 12%" align="center">
+            <div>أرقام التسجيل</div>
+          </th>
+          <th style="width: 15%" align="center">
+            <div>الملاحظات</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="$chunks"></tbody>
+    </table>
+    <div id="footer"></div>
+    <div style="page-break-after: always"></div>
+  </div>
+</body>

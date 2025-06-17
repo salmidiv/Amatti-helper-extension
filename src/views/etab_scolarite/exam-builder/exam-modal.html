@@ -1,0 +1,336 @@
+<div id="exams-builder-modal" class="ui basic modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">تسيير الامتحانات</div>
+  <div class="content">
+    <div class="ui form segment">
+      <div class="lds" id="notifyExams"></div>
+      <div class="tab" data-tab-id="tab4">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab4">
+          <a class="hacen item tab tab-link active" data-target="ziro">
+            تحميل البيانات
+          </a>
+          <a class="hacen item tab tab-link" data-target="one"> القاعات </a>
+          <a class="hacen item tab tab-link" data-target="two">
+            انشاء امتحان
+          </a>
+          <a class="hacen item tab tab-link" data-target="three">
+            توزيع التلاميذ
+          </a>
+          <a class="hacen item tab tab-link" data-target="four"> الامتحانات </a>
+        </div>
+        <div class="tabs-content2">
+          <div
+            class="ui bottom text-black fs-2 tab segment active ziro panel"
+            data-tab-id="tab4"
+          >
+            <div
+              id="countExamNote"
+              class="text-center fs-2 py-3 hacen fw-bold"
+            ></div>
+            <div class="thisYear py-3 mb-5">
+              <h2 class="hacen fs-2 mb-3 flex middle-align between-content">
+                تفريغ بيانات الخاصة بالمعدلات
+              </h2>
+              <div class="note hacen wr d-flex p-2 fs-2 w-100 mb-2">
+                <div class="pr-6">
+                  يجب تفريغ قاعدة بيانات المعدلات الخاصة بتسيير الامتحانات لحل
+                  مشكل عدم ظهور القوائم مرتبة حسب المعدلات ، وإعادة تحميلها من
+                  جديد
+                </div>
+              </div>
+
+              <button
+                class="btn btn-danger hacen emptyExamBuilderDatabase"
+                data-id="1"
+              >
+                تفريغ قاعدة بيانات معدلات الفصلية الخاصة بتسيير الامتحانات
+              </button>
+            </div>
+            <div class="thisYear py-3 mb-5">
+              <h2 class="hacen fs-2 mb-3 flex middle-align between-content">
+                خاص بالسنة الماضية
+              </h2>
+              <button class="btn btn-success hacen getLastMoyenSanawi">
+                تحميل المعدلات السنوية للسنة الماضية
+              </button>
+              <button disabled class="btn btn-Sky hacen getLastMoyenSanawiOne">
+                تحميل معدلات السنة الأولى
+              </button>
+            </div>
+            <div class="thisYear py-3 mb-5">
+              <h2 class="hacen fs-2 mb-3 flex middle-align between-content">
+                خاص بالسنة الحالية
+              </h2>
+
+              <button class="btn btn-Sky hacen getMoyenByTri" data-id="1">
+                تحميل المعدلات الخاصة بالفصل الأول
+              </button>
+              <button class="btn btn-Sky hacen getMoyenByTri" data-id="2">
+                تحميل المعدلات الخاصة بالفصل الثاني
+              </button>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment one panel"
+            data-tab-id="tab4"
+          >
+            <div class="w-100 flex gap-4">
+              <div class="w-25 p-3 card flex flex-column gap-2">
+                <h3 class="hacen fs-2 mb-3" id="formTitle">إضافة قاعة جديدة</h3>
+                <div class="field">
+                  <label class="hacen">رمز القاعة</label>
+                  <input
+                    type="text"
+                    id="hallCode"
+                    class="hacen h-38 fs-2"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="hacen">اسم القاعة</label>
+                  <input
+                    type="text"
+                    id="hallName"
+                    class="hacen h-38 fs-2"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="hacen">السعة</label>
+                  <input
+                    type="number"
+                    id="hallCapacity"
+                    class="hacen h-38 fs-2"
+                    required
+                    min="1"
+                  />
+                </div>
+                <div class="field flex w-100 gap-2">
+                  <button class="btn btn-success hacen w-100 saveHall">
+                    حفظ
+                  </button>
+                  <button
+                    type="button"
+                    id="cancelBtn"
+                    class="btn btn-danger hacen w-100 hidden cancelBtn"
+                  >
+                    إلغاء
+                  </button>
+                </div>
+              </div>
+              <div class="w-75 p-3">
+                <table class="table hacen fs-2">
+                  <thead>
+                    <tr>
+                      <th>رمز القاعة</th>
+                      <th>اسم القاعة</th>
+                      <th>السعة</th>
+                      <th>الحالة</th>
+                      <th>العمليات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hallsList"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment two panel"
+            data-tab-id="tab4"
+          >
+            <div class="w-100">
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-100">
+                  <label class="hacen">اختر الامتحان للتعديل</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="editExamSelect"
+                  >
+                    <option value="">--إضافة امتحان جديد--</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-25">
+                  <label class="hacen">الفترة</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="triexambuilder"
+                  >
+                    <option value="">الرجاء الاختيار</option>
+                    <option value="1">الفصل الأول</option>
+                    <option value="2">الفصل الثاني</option>
+                    <option value="3">الفصل الثالث</option>
+                  </select>
+                </div>
+                <div class="w-50">
+                  <label class="hacen">اسم المادة</label>
+                  <input
+                    type="text"
+                    id="title"
+                    class="h-38 hacen fs-2"
+                    maxlength="250"
+                    placeholder="أكتب العنوان هنا..."
+                    required=""
+                  />
+                </div>
+                <div class="w-25">
+                  <label class="hacen d-flex">اختر لونا</label>
+                  <input
+                    type="color"
+                    id="color"
+                    class="h-38 flex w-100 hacen fs-2 p-0"
+                    value="#2c7be5"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-100 flex gap-4">
+                  <div class="w-100">
+                    <label class="hacen">الأقسام</label>
+                    <select
+                      class="hacen ui py-1 fs-2"
+                      id="sections"
+                      multiple
+                      style="height: 200px; overflow-y: auto"
+                    >
+                      <option value="">--الرجاء الاختيار --</option>
+                    </select>
+                  </div>
+                  <div class="w-100 mb-2">
+                    <label class="hacen">القاعات المخصصة</label>
+                    <select
+                      class="hacen ui py-1 fs-2"
+                      id="selectedHalls"
+                      multiple
+                      style="height: 200px; overflow-y: auto"
+                    >
+                      <!-- سيتم ملؤها ديناميكياً -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-end">
+                <button class="w-25 hacen fs-2 btn btn-success saveExamData">
+                  حفظ بيانات الاختبار
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment three panel"
+            data-tab-id="tab4"
+          >
+            <div class="w-100">
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-100">
+                  <label class="hacen">اختر الامتحان</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="examSelect"
+                  >
+                    <option value="">--الرجاء الاختيار --</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-50">
+                  <label class="hacen">اتجاه التوزيع</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="distributionDirection"
+                  >
+                    <option value="">--الرجاء الاختيار --</option>
+                    <option value="random">عشوائي</option>
+                    <option value="ascending">تصاعدي</option>
+                    <option value="descending">تنازلي</option>
+                  </select>
+                </div>
+                <div class="w-50">
+                  <label class="hacen">معيار التوزيع</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="distributionCriteria"
+                  >
+                    <option value="">--الرجاء الاختيار --</option>
+                    <option value="name">الاسم</option>
+                    <option value="lastname">اللقب</option>
+                    <option value="division">القسم</option>
+                    <option value="gender">الجنس</option>
+                    <option value="age">العمر</option>
+                    <option value="firstTrimester">معدل الفصل الأول</option>
+                    <option value="secondTrimester">معدل الفصل الثاني</option>
+                    <option value="bothTrimesters">
+                      معدل الفصلين الأول والثاني
+                    </option>
+                    <option value="lastYear">
+                      المعدل السنوي للسنة الماضية
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-100">
+                  <label class="hacen">نطاق التوزيع</label>
+                  <select
+                    class="hacen ui py-1 dropdown h-38 fs-2"
+                    id="distributionScope"
+                  >
+                    <option value="">--الرجاء الاختيار --</option>
+                    <option value="perDivision">
+                      توزيع حسب كل قسم على حدة
+                    </option>
+                    <option value="allDivisions">
+                      توزيع كل الأقسام المختارة على أساس قسم واحد
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex flex-start gap-1 mb-2">
+                <div class="w-50">
+                  <label class="hacen">أرقام التلاميذ تبدأ من</label>
+                  <input
+                    type="number"
+                    id="studentsStartNum"
+                    class="hacen h-38 fs-2"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-end">
+                <button
+                  class="w-25 hacen fs-2 btn btn-success saveDistribution"
+                >
+                  حفظ التوزيع
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment four panel"
+            data-tab-id="tab4"
+          >
+            <div class="w-100">
+              <label class="hacen">الفترة</label>
+              <select
+                class="hacen ui py-1 dropdown h-38 fs-2"
+                id="triexambuilder2"
+              >
+                <option value="">الرجاء الاختيار</option>
+                <option value="1">الفصل الأول</option>
+                <option value="2">الفصل الثاني</option>
+                <option value="3">الفصل الثالث</option>
+              </select>
+            </div>
+            <div class="mt-4" id="examsList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

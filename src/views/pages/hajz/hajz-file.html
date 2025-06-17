@@ -1,0 +1,90 @@
+<style>
+  .error {
+    background-color: #ff7c67;
+  }
+  #hajz-file-modal {
+    width: 90%;
+  }
+</style>
+<div id="hajz-file-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">
+    التأكد من ملفات الحجز واستيراد النقاط
+  </div>
+  <div class="content">
+    <section class="ui form segment text-black hacen">
+      <div class="d-flex gap-4">
+        <div class="w-25">
+          <input type="file" accept=".xls, .xlsx" id="$fileHajz" hidden />
+          <label
+            id="$saveFileHajz"
+            class="btn btn-Blue text-center d-flex w-100"
+            for="$fileHajz"
+          >
+            اضغط هنا لتحميل ملف الحجز
+          </label>
+          <div class="fs-2 mb-3 mt-3 hacen">
+            <span class="fs-2 mb-3 mt-3 hacen" id="file-title"></span>
+          </div>
+          <select
+            id="$nivs"
+            class="input-control h-38 p-1 d-flex mt-4 d-none hacen"
+          ></select>
+          <div id="classes" class="mt-4"></div>
+          <div class="note hacen d-flex p-2 fs-2 w-100 mt-2">
+            <div class="pr-6 pt-5">
+              النسخة الحالية تقوم باكتشاف الأخطاء،
+              <br />
+              إضافة لحجز النقاط مباشرة من الإضافة
+            </div>
+          </div>
+        </div>
+        <div
+          style="position: relative"
+          class="w-75 fs-2 p-2 rounded-lg border border-gray-200"
+        >
+          <div class="d-flex gap-1">
+            <span id="title-from-sheet"></span>
+          </div>
+          <div
+            style="
+              position: relative;
+              height: 340px;
+              padding-bottom: 20px;
+              overflow-y: scroll;
+            "
+          >
+            <table id="ext-note" class="table fs-3 mt-3">
+              <thead id="tablehead"></thead>
+              <tbody id="tablebody"></tbody>
+            </table>
+            <div
+              style="
+                display: none;
+                gap: 16px;
+                position: sticky;
+                bottom: 0px;
+                right: 36%;
+                width: 235px;
+              "
+              id="$extNote"
+            >
+              <button
+                style="opacity: 0.9"
+                class="btn btn-Indigo hacen hajzNote"
+                id="$hajzNote"
+              >
+                حجز النقاط
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

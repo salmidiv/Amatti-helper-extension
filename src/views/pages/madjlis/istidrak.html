@@ -1,0 +1,162 @@
+<div id="istidrak-modal" class="ui basic modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">الاستدراك</div>
+  <div class="content">
+    <section class="ui form segment">
+      <div class="lds" id="$notifyIstidrak"></div>
+      <div class="tab" data-tab-id="tab5">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab5">
+          <a class="hacen item tab tab-link active" data-target="isData">
+            جلب + مطبوعات
+          </a>
+          <a class="hacen item tab tab-link d-none" data-target="isMawad">
+            مواد المستدركين
+          </a>
+        </div>
+        <div class="tabs-content1">
+          <div
+            class="ui bottom text-black fs-2 tab segment active isData panel"
+            data-tab-id="tab5"
+          >
+            <div class="w-100 border-1 p-3 br-4">
+              <div class="note hacen wr d-flex p-2 fs-2 w-100 mb-3">
+                <div class="pr-6">
+                  1-
+                  <p class="ui large red circular label header span1 biarabi">
+                    هــــام
+                  </p>
+                  يجب إتمام جميع أعمال حجز النقاط وتأكيذ قرار مجلس القسم،
+                  <br />
+                  2-
+                  <p class="ui large red circular label header span1 biarabi">
+                    هــــام
+                  </p>
+                  يجب إعادة رفع بيانات التلاميذ وأوليائهم أولا بالنسبة للمؤسسات
+                  التي حدثت فيها حركة التلاميذ، لتفادي مشاكل في الاستدراك
+                  <br />
+                  3-
+                  <p class="ui large red circular label header span1 biarabi">
+                    هــــام
+                  </p>
+                  يجب تحميل بيانات الخريطة التربوية من نافذة ضبط الاعدادات -
+                  بيانات المستخدمين - تحميل بيانات الخريطة التربوية
+                </div>
+              </div>
+              <div class="d-flex gap-1 mb-3 align-items-center between-content">
+                <h2 class="fs-2 m-0 hacen w-25">بيانات الاستدراك</h2>
+                <div class="d-flex gap-1 w-50">
+                  <button class="getIstidrakList btn btn-dark w-100 hacen fs-3">
+                    <i class="icon sync"></i>
+                    جلب بيانات الاستدراك
+                  </button>
+                  <button
+                    id="$dropStatData"
+                    class="w-100 btn btn-danger hacen fs-3 dropStatData"
+                  >
+                    تفريغ بيانات الاستدراك
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex gap-4" style="margin-top: 10px">
+                <a
+                  href="https://amatti.education.dz/istidrak_list2"
+                  target="_blank"
+                  id="print-istidrak-no-moy"
+                  class="btn btn-danger w-100 fs-2 hacen"
+                  onclick="$('#istidrakForm').modal('hide');"
+                >
+                  عرض قوائم المستدركين
+                </a>
+
+                <a
+                  href="https://amatti.education.dz/istidrak_istida"
+                  target="_blank"
+                  onclick="$('#istidrakForm').modal('hide');"
+                  id="print-istidrak-istidaa"
+                  class="btn btn-info w-100 fs-2 hacen"
+                >
+                  استدعاءات الاستدراك
+                </a>
+              </div>
+
+              <div class="mt-4">
+                <h2 id="waitText" class="fs-2 hacen text-center"></h2>
+              </div>
+              <h2 class="hacen fs-2 fw-bold">
+                حدد تاريخ الاستدراك (عند الإختيار سيظهر التاريخ تلقائيا في جميع
+                الاستدعاءات ويمكن تغييره)
+              </h2>
+              <div class="d-flex gap-1 mt-3">
+                <div class="d-flex w-100 gap-1">
+                  <div class="ui w-100 hacen">
+                    <input
+                      class="hacen fs-3 istidakdate"
+                      type="text"
+                      placeholder="سجل تاريخ الاستدراك مثلا: 18 جوان 2023"
+                    />
+                  </div>
+                  <button class="btn w-25 fs-3 btn-info hacen saveistidakdate">
+                    حفظ تاريخ الاستدراك
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment isMawad panel"
+            data-tab-id="tab5"
+          >
+            <div class="note hacen fs-2 pr-6 p-2">
+              بالنسبة للطور الثانويـ يمكنكم اختيار المواد التي يستدرك فيها
+              التلميذ من خلال اختيار القسم، بعد ظهور الجدول تضغط على معدل المادة
+              أو المواد لكل تلميذ، بعد ذلك الضغط على أيقونة حفظ
+              <br />
+              2- يمكنك الضغط على اسم المعفاة لكل السمتوى والحفظ من أجل إخفائها
+              من الجداول الخاصة بقوائم الاستدراك والاستدعاءات، في حال كان مادة
+              معدلها أكبر من 10 لكل تلاميذ المستوى وليس القسم يمكن أيضا الضغط
+              عليها لاخفائها
+            </div>
+            <div class="ui form fs-3 mt-3">
+              <select
+                class="input-control hacen h-38 fs-2 no p-0 classesIst"
+              ></select>
+            </div>
+            <table
+              class="table mt-3 fs-3 hacen istidrakList"
+              id="$istidrakList"
+            ></table>
+            <button
+              class="btn btn-dark hacen mt-3 w-100 fs-2 d-none pos savaIstidrak"
+              id="$savaIstidrak"
+            >
+              حفظ البيانات
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .istidrakList td {
+    cursor: pointer;
+  }
+  .yes {
+    background-color: #f796ca !important;
+  }
+
+  .yesnot {
+    background-color: #fdf039 !important;
+  }
+
+  .setModule {
+    cursor: pointer;
+  }
+</style>

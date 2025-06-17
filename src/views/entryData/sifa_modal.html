@@ -1,0 +1,77 @@
+<style>
+  .certResults {
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Adjust the second value to set the vertical spacing */
+  }
+  .certResults td,
+  .certResults th {
+    padding: 0px;
+    border: 0;
+  }
+</style>
+<div id="sifa-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">تحديث صفة التلاميذ</div>
+  <div class="content">
+    <div class="ui form segment">
+      <div class="lds" id="$notifyChahada"></div>
+      <div class="tab" data-tab-id="tab3">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab3">
+          <a class="hacen item tab tab-link active" data-target="one">
+            تحديث صفة التلاميذ
+          </a>
+        </div>
+        <div class="tabs-content2">
+          <div
+            class="ui bottom text-black fs-2 tab segment active one panel"
+            data-tab-id="tab3"
+          >
+            <div class="note mb-3 fs-2 pr-6 hacen">
+              أولا قم بجلب قوائم التلاميذ (تتم العملية في كل مرة تفتح فيها هذه
+              الصفحة)
+            </div>
+            <div class="flex gap-4" style="flex-direction: column">
+              <h2 class="hacen fs-2">اختر القسم</h2>
+              <div class="flex gap-4">
+                <select id="levels" class="h-38 p-1 px-3 hacen levels"></select>
+              </div>
+              <br />
+              <div class="w-100">
+                <table class="table hacen fs-3 text-center">
+                  <thead>
+                    <tr>
+                      <th colspan="9">قم بتحديد الصفة المناسبة للتلميذ</th>
+                    </tr>
+                    <tr>
+                      <th rowspan="2">#</th>
+                      <th rowspan="2">رقم التعريف</th>
+                      <th rowspan="2">الاسم واللقب</th>
+                      <th rowspan="2">تاريخ الميلاد</th>
+                      <th rowspan="2">الجنس</th>
+                      <th rowspan="2">المستوى</th>
+                      <th colspan="5">الصفة</th>
+                    </tr>
+                    <tr>
+                      <th>داخلي</th>
+                      <th>ن.داخلي</th>
+                      <th>خارجي</th>
+                    </tr>
+                  </thead>
+                  <tbody id="students_list"></tbody>
+                </table>
+                <button id="save-regime" class="btn btn-dark hacen save-regime">
+                  حفظ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

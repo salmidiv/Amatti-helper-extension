@@ -1,0 +1,33 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+      margin-top: 10mm;
+      margin-bottom: 10mm;
+    }
+  </style>
+  <title>قائمة التلاميذ</title>
+</head>
+
+<body class="print A4">
+  <div class="sheet h-auto p-10mm pt-0mm m-h-A4">
+    <div id="header"></div>
+    <h1 class="m-0 p-0 hacen fs-2 text-center" id="$title"></h1>
+    <div class="content">
+      <table class="table mb-0 fs-4 hacen text-center">
+        <thead>
+          <tr>
+            <th class="th_s" style="width: 50px">الرقم</th>
+            <th class="th_s">الاسم واللقب</th>
+            <th class="th_s" style="width: 100px">تاريخ الميلاد</th>
+            <th class="th_s">المادة</th>
+            <th class="th_s rotba d-none">الرتبة</th>
+            <th class="th_s" style="width: 150px">ملاحظات</th>
+          </tr>
+        </thead>
+        <tbody id="$studentsList"></tbody>
+      </table>
+    </div>
+    <div id="footer"></div>
+  </div>
+</body>

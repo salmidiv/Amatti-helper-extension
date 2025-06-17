@@ -1,0 +1,59 @@
+<head>
+  <title> </title>
+  <style>
+    html,
+    body {
+      background-color: #fff !important;
+      font-family: hacen !important;
+    }
+
+    button,
+    select {
+      font-family: hacen !important;
+    }
+
+    @page {
+      size: A4;
+    }
+  </style>
+</head>
+
+<body class="A4" dir="rtl">
+  <div class="sheet p-5mm">
+    <header dir="rtl" class="d-flex gap-1">
+      <select class="form-control w-50" id="$classes">
+        <option>اختر المستوى</option>
+      </select>
+      <button class="btn btn-dark" id="$printList">ملأ الجداول</button>
+    </header>
+
+    <div class="content">
+      <h1 id="$t" class="mt-3 text-center h2"></h1>
+      <h3>معطيات 30 أكتوبر للسنة الماضية</h3>
+      <p>11- توزيع التلاميذ المسجلين (المجموع) حسب السن والجنس</p>
+      <table id="$elevenone" class="table text-center"></table>
+      <p>
+        1-11 منهم المسجلون (المجموع) القادمون من مؤسسات اخرى أو شعب أخرى من نفس
+        المؤسسة
+      </p>
+      <table id="$eleventwo" class="table text-center"></table>
+      <hr />
+
+      <h3>معطيات 30 أكتوبر للسنة الحالية</h3>
+      <p>12- توزيع التلاميذ المسجلين (المجموع) حسب السن والجنس</p>
+      <table id="$twelveone" class="table text-center"></table>
+      <p>
+        1-12 منهم المسجلون (المجموع) القادمون من مؤسسات اخرى أو شعب أخرى من نفس
+        المؤسسة
+      </p>
+      <table id="$twelvetwo" class="table text-center"></table>
+      <p>13- توزيع التلاميذ المسجلين ( المعيدين) حسب الجنس والسن</p>
+      <table id="$moiidone" class="table text-center"></table>
+      <p>
+        1-13 منهم المسجلون (المعيدون) القادمون من مؤسسات اخرى أو شعب أخرى من نفس
+        المؤسسة
+      </p>
+      <table id="$wafidtwo" class="table text-center"></table>
+    </div>
+  </div>
+</body>

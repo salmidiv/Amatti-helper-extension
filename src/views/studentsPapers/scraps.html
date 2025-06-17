@@ -1,0 +1,71 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+    }
+
+    .page {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    @media print {
+      .action {
+        display: none;
+        opacity: 0;
+      }
+    }
+    .head {
+      height: 13mm;
+      line-height: 0.5cm;
+      padding: 0 !important;
+    }
+    .head h2 {
+      font-size: 1.6rem !important;
+      line-height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.3cm;
+    }
+
+    .action {
+      position: fixed;
+      background: #fff;
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 20px;
+      border-radius: 0.4rem;
+      margin-right: 0.4rem;
+    }
+  </style>
+</head>
+
+<body class="print A4 hacen m-h-A4">
+  <div class="action" id="$action">
+    <label for="boys" class="btn btn-Blue hacen">
+      <input type="checkbox" id="boys" checked />
+      الذكور
+    </label>
+    <label for="girls" class="btn btn-Pink hacen">
+      <input type="checkbox" id="girls" checked />
+      الإناث
+    </label>
+    <label for="intern" class="btn btn-Indigo hacen">
+      <input type="checkbox" id="intern" checked />
+      نصف داخلي
+    </label>
+    <label for="extern" class="btn btn-Teal hacen">
+      <input type="checkbox" id="extern" checked />
+      خارجي
+    </label>
+  </div>
+  <div id="content">
+    <div class="sheet p-15mm">
+      <h1 class="fs-0 text-center">يرجى الانتظار</h1>
+    </div>
+  </div>
+</body>

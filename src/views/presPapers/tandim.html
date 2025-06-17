@@ -1,0 +1,62 @@
+<head>
+  <style>
+    @page {
+      size: A3 landscape;
+    }
+    .admin {
+      background: rgb(128 128 128 / 50%);
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="print A4 landscape hacen" dir="rtl">
+  <div class="note wr no-print hacen d-flex p-2 fs-2 w-100 mb-2">
+    <div class="pr-6">
+      بالنسبة للطور الثانوي، يجب اختيار A3 من اعدادات الطباعة، لا يمكن طباعة
+      التنظيم التربوي على ورقة A4
+      <br />
+      بالنسبة للطورين المتوسط والابتدائي يمكنكم التحكم في درجة (zoom) فقط لتصحيح
+      الطباعة
+    </div>
+  </div>
+  <div class="sheet h-auto p-5mm">
+    <div id="header"></div>
+    <div id="containe">
+      <h1 class="fs-1 mb-1 mt-0 text-center">التنظيم التربوي</h1>
+    </div>
+    <table
+      id="teachers_list"
+      style="
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        width: 100%;
+      "
+      border="1"
+    >
+      <thead>
+        <tr>
+          <th>
+            <div class="fs-2">
+              انتظر قليلا حتى يتم جلب البيانات (تعتمد مدة الانتظار على سرعة
+              الأنترنيت لديك)
+              <br />
+              <div id="$inuse"></div>
+              <br />
+              ملاحظة: ابقى على نفس الصفحة لحين انتهاء العملية
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="mo"></div>
+    <div id="footer"></div>
+  </div>
+</body>

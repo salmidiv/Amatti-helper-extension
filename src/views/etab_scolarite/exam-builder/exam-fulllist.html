@@ -1,0 +1,37 @@
+<head>
+  <style>
+    @page {
+      size: A4;
+      margin-top: 0.2in;
+    }
+    @page :first {
+      margin-bottom: 0in; /* Margin for the first page */
+    }
+    table :where(th, td) {
+      padding: 0 5px !important;
+    }
+  </style>
+</head>
+<body class="print A4">
+  <div class="sheet p-5mm h-auto">
+    <div id="header"></div>
+    <div class="fs-2 p-3 hacen fw-bold text-center">القائمة الاسمية</div>
+    <div>
+      <table class="table hacen fs-3">
+        <thead>
+          <tr>
+            <th>الرقم</th>
+            <th>الترتيب</th>
+            <th>الاسم واللقب</th>
+            <th>تاريخ الميلاد</th>
+            <th>المستوى</th>
+            <th>رقم القاعة</th>
+            <th>ملاحظات</th>
+          </tr>
+        </thead>
+        <tbody id="$studentsList"></tbody>
+      </table>
+    </div>
+    <div id="footer"></div>
+  </div>
+</body>

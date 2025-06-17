@@ -1,0 +1,130 @@
+<div id="notes-modal" class="ui basic small modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">
+    حجز معدلات الاجازات والملاحظات
+  </div>
+  <div class="content">
+    <section class="ui form segment">
+      <div class="lds" id="$notifyPapers"></div>
+      <div class="tab" data-tab-id="tab2">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab2">
+          <a class="hacen item tab tab-link active" data-target="moyen">
+            حجز معدلات الاجازات
+          </a>
+          <a class="hacen item tab tab-link" data-target="notes">
+            حجز الملاحظات
+          </a>
+          <!--
+          <a class="hacen item tab tab-link" data-target="extraNotes">
+            حجز التقديرات للثانوي
+          </a>
+          -->
+        </div>
+        <div class="tabs-content1">
+          <div
+            class="ui bottom text-black fs-2 tab segment active moyen panel"
+            data-tab-id="tab2"
+          >
+            <div class="ui four column aligned grid">
+              <div class="column">
+                <div class="field">
+                  <label class="fs-2"> لوحة شرف </label>
+                  <input
+                    class="mt-1 input-control hacen w-100 h-38"
+                    type="text"
+                    id="lawha"
+                  />
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="fs-2"> تشجيع </label>
+                  <input
+                    class="mt-1 input-control hacen w-100 h-38"
+                    type="text"
+                    id="tchjia"
+                  />
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="fs-2"> تهنئة </label>
+                  <input
+                    class="mt-1 input-control hacen w-100 h-38"
+                    type="text"
+                    id="thniaa"
+                  />
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="field">
+                  <label class="fs-2"> امتياز </label>
+                  <input
+                    class="mt-1 input-control hacen w-100 h-38"
+                    type="text"
+                    id="imtiyaz"
+                  />
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-dark saveIjaza hacen w-100 mt-3">
+              حفظ التغييرات
+            </button>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment notes panel"
+            data-tab-id="tab2"
+          >
+            <div class="mb-3">
+              <div class="note hacen d-flex p-2 fs-2 w-100 mb-2">
+                <div class="pr-6">
+                  قم بإدخال جميع الملاحظات التي تريد لكل مستوى ، تأكد أنك تضع كل
+                  ملاحظة في سطر منفصل، ستقوم الإضافة بإعطاء كل تلميذ ملاحظة
+                  واحدة عشوائيا حسب معدله
+                </div>
+              </div>
+            </div>
+            <div class="d-flex gap-4">
+              <select
+                id="p-mada"
+                class="h-38 input-control w-100 hacen p-1 fs-2"
+              >
+                <option value="">اختر المادة</option>
+                <option value="ar">اللغة العربية</option>
+                <option value="fr">اللغة الفرنسية</option>
+                <option value="mz">اللغة الأمازيغية</option>
+              </select>
+              <select
+                class="w-100 input-control select-note-type h-38 hacen p-1 fs-2"
+                id="moyen-range"
+              ></select>
+            </div>
+
+            <textarea
+              id="notes-for-moy"
+              class="input-control text-notes mt-4 p-3 hacen"
+              cols="30"
+              rows="6"
+              placeholder="أدخل الملاحظات حسب ماتراه مناسبا، تأكد من وضع كل ملاحظة في سطر منفصل"
+            ></textarea>
+            <button class="btn btn-dark w-100 hacen h-38 mt-3 save-notes">
+              حفظ الملاحظات
+            </button>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment extraNotes panel"
+            data-tab-id="tab2"
+          >
+            hsdfhsdf
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

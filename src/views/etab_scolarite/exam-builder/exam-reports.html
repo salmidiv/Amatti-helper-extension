@@ -1,0 +1,37 @@
+<head>
+  <title> </title>
+  <style>
+    @page {
+      size: A4;
+    }
+
+    .sheet {
+      height: auto !important;
+    }
+
+    * {
+      font-family: "hacen" !important;
+    }
+
+    .w-80 {
+      width: 80px;
+    }
+
+    @media print {
+      .page {
+        padding: 5mm;
+      }
+
+      input {
+        border: 0;
+        width: 45px !important;
+      }
+    }
+
+    input::placeholder {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body class="print A4" dir="rtl" id="$content"></body>

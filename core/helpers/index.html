@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Testing</title>
+</head>
+<body>
+    <h1>Model Testing</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        import { User, Post, Role } from './index.js';
+
+        async function test() {
+            try {
+                console.log(await new User.find(3))
+                // Get user with post
+                const user = await new User()
+                    //.with('post')
+                    .whereBetween('id', [1,2])
+                    .first();
+                
+
+                // Get user with all relations
+                const userWithAll = await new User()
+                    //.with('post', 'roles')
+                    .where('id', 1)
+                    .first();
+                
+
+                // Test nested where
+                const users = await new User()
+                    .where(query => {
+                        query.where('name', 'like', '%John%')
+                            .orWhere('email', '@example.com');
+                    })
+                    .get();
+                
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Run tests when page loads
+        test();
+    </script>
+</body>
+</html>

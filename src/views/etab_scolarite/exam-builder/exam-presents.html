@@ -1,0 +1,35 @@
+<head>
+  <title> </title>
+  <style>
+    @page {
+      size: A4;
+    }
+
+    .w-80 {
+      width: 80px;
+    }
+
+    @media print {
+      .page {
+        padding: 5mm;
+      }
+
+      input {
+        border: 0;
+        width: 45px !important;
+      }
+      input::placeholder {
+        color: transparent !important;
+      }
+    }
+    table th,
+    table td {
+      padding: 2px !important;
+    }
+    input::placeholder {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body class="print A4" dir="rtl" id="$content"></body>

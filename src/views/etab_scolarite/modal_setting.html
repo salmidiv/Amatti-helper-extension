@@ -1,0 +1,351 @@
+<div id="setting-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">ضبط الاعدادات</div>
+  <div class="content">
+    <section class="ui form segment" id="form_civil">
+      <div class="lds" id="$loader"></div>
+
+      <div class="tab" data-tab-id="tab1">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab1">
+          <a class="hacen item tab tab-link active" data-target="princ">
+            اعدادات أساسية</a
+          >
+          <a class="hacen item tab tab-link" data-target="studs">
+            بيانات التلاميذ</a
+          >
+          <a class="hacen item tab tab-link" data-target="pers">
+            بيانات المستخدمين</a
+          >
+          <a class="hacen item tab tab-link" data-target="empty">
+            تفريغ قاعدة البيانات</a
+          >
+        </div>
+        <div class="tabs-content-0" id="panels">
+          <div
+            class="ui bottom text-black fs-2 tab segment active princ panel"
+            data-tab-id="tab1"
+          >
+            <div class="two fields">
+              <div class="field">
+                <label> اختر الطور</label>
+                <select
+                  class="ui py-1 dropdown hacen schoolType"
+                  id="schoolType"
+                ></select>
+              </div>
+              <div class="field">
+                <label> اسم المؤسسة</label>
+                <input
+                  class="hacen h-38 schoolName"
+                  type="text"
+                  id="schoolName"
+                  placeholder="أدخل اسم المؤسسة"
+                />
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label class="ui biarabi">اسم المدير</label>
+                <div class="ui corner labeled input">
+                  <input
+                    class="hacen h-38 modirName"
+                    type="text"
+                    id="modirName"
+                    placeholder="أدخل اسم المدير"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label class="ui biarabi"> اسم الولاية</label>
+                <div class="ui corner labeled input">
+                  <input
+                    class="hacen h-38 wilaya"
+                    type="text"
+                    id="wilaya"
+                    placeholder="أدخل اسم الولاية"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label class="ui biarabi"> اسم البلدية</label>
+                <div class="ui corner labeled input">
+                  <input
+                    class="hacen h-38 baladiya"
+                    type="text"
+                    id="baladiya"
+                    placeholder="أدخل اسم البلدية"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <button
+                id="saveSetting"
+                class="btn btn-Sky w-100 fs-2 hacen h-38 saveSetting"
+              >
+                حفظ
+              </button>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black tab segment studs panel"
+            data-tab-id="tab1"
+          >
+            <div id="$notifyStudents" class="mb-5"></div>
+            <div class="thisYear mb-5">
+              <h2 class="hacen fs-2 mb-3 flex middle-align between-content">
+                خاص بالسنة الحالية (تحمل هذه البيانات أولا)
+                <button
+                  class="h-32 hacen btn btn-danger fs-3 emptyThisYearData"
+                >
+                  تفريغ بيانات السنة الحالية
+                </button>
+                <span class="d-none middle-align">
+                  <input id="ifchange" type="checkbox" class="ml-3" />
+                  <label for="ifchange"> تعديل البيانات (بسبب وافدين) </label>
+                </span>
+              </h2>
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    id="$saveStudents"
+                    class="btn btn-Neutral h-38 w-100 hacen saveStudents"
+                  >
+                    1- حفط بيانات التلاميذ الأساسية
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    id="$savetudentsSifa"
+                    class="btn btn-Amber h-38 w-100 hacen savetudentsSifa"
+                  >
+                    2- حفط صفة التلاميذ
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    id="$saveMoiidStudents"
+                    class="btn btn-Cyan h-38 w-100 hacen saveMoiidStudents"
+                  >
+                    3- حفط بيانات التلاميذ المعيدين
+                  </button>
+                </div>
+              </div>
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    id="$saveInStudents"
+                    class="btn btn-Teal h-38 w-100 hacen saveInStudents"
+                  >
+                    4- حفط بيانات التلاميذ الوافدين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    id="$saveOutStudents"
+                    class="btn btn-Pink h-38 w-100 hacen saveOutStudents"
+                  >
+                    5- حفط بيانات التلاميذ المغادرين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    id="$saveStopStudents"
+                    class="btn btn-Lime h-38 w-100 hacen saveStopStudents"
+                  >
+                    6- حفط بيانات التلاميذ المشطوبين
+                  </button>
+                </div>
+              </div>
+              <div class="field">
+                <button
+                  id="$saveMoreInfo"
+                  class="btn btn-Blue h-38 w-100 hacen saveMoreInfo"
+                >
+                  7- حفط بيانات أولياء التلاميذ
+                </button>
+              </div>
+            </div>
+            <div class="thisYear" style="border-color: chocolate">
+              <h2 class="hacen fs-2 mb-3">خاص بالسنوات السابقة</h2>
+              <div class="mb-3">
+                <select id="$yearsOld" class="h-38 w-100 fs-2 p-1 px-3 hacen">
+                  <option value="">اختر السنة الدراسية</option>
+                  <option value="2015">2015 - 2016</option>
+                  <option value="2016">2016 - 2017</option>
+                  <option value="2017">2017 - 2018</option>
+                  <option value="2018">2018 - 2019</option>
+                  <option value="2019">2019 - 2020</option>
+                  <option value="2020">2020 - 2021</option>
+                  <option value="2021">2021 - 2022</option>
+                  <option value="2022">2022 - 2023</option>
+                  <option value="2023">2023 - 2024</option>
+                </select>
+              </div>
+              <div class="two fields">
+                <div class="field">
+                  <button
+                    id="$saveStudentsOld"
+                    class="btn btn-Neutral h-38 w-100 hacen saveStudentsOld"
+                  >
+                    1- حفط بيانات التلاميذ الأساسية
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    id="$saveStopStudentsOld"
+                    class="btn btn-Lime h-38 w-100 hacen saveStopStudentsOld"
+                  >
+                    2- حفط بيانات التلاميذ المشطوبين
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!--
+                    <div class="field">
+                        <button id="$savetudentsCivil" class="btn btn-Green h-38 w-100 hacen">
+                            حفظ بيانات أولياء التلاميذ
+                        </button>
+                    </div>
+                    -->
+          </div>
+          <div
+            class="ui bottom text-black tab segment pers panel"
+            data-tab-id="tab1"
+          >
+            <div class="two fields">
+              <div class="field">
+                <button class="hacen btn btn-Zinc w-100 persLoad" id="persLoad">
+                  بيانات المستخدمين الأساسية
+                </button>
+              </div>
+              <div class="field">
+                <button
+                  class="hacen btn btn-Green w-100 persFromFiche"
+                  id="persFromFiche"
+                >
+                  بيانات المستخدمين من بطاقة المعلومات
+                </button>
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <button
+                  type="submit"
+                  id="$changeTeachersGender"
+                  class="btn btn-Blue hacen w-100 changeTeachersGender"
+                  onclick="$('#teachers-gender-modal').modal('show')"
+                >
+                  تعديل الجنس للمستخدمين
+                </button>
+              </div>
+
+              <div class="field">
+                <button
+                  class="hacen btn btn-danger w-100 saveDivs"
+                  id="saveDivs"
+                >
+                  الخريطة التربوية
+                </button>
+              </div>
+              <div class="field">
+                <button
+                  class="hacen btn btn-Pink w-100 persIsnad"
+                  id="persIsnad"
+                >
+                  اسناد الأساتذة
+                </button>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div class="persState text-black d-none">
+              <div class="hacen h3 fs-2 d-block text-center">
+                متابعة تحميل بيانات المستخدمين
+              </div>
+              <div class="hacen h3 fs-2 d-block text-center">
+                الوقت المتوقع لإتمام العملية: <span class="time"></span>
+              </div>
+              <div class="hacen counter h3 fs-0 d-block text-center"></div>
+            </div>
+            <!--
+            <div class="two fields">
+              <div class="field">
+                <button
+                  id="$savePersonnelsData"
+                  class="btn btn-Emerald h-38 w-100 hacen"
+                >
+                  1- حفظ بيانات المستخدمين الأساسية
+                </button>
+              </div>
+              <div class="field">
+                <button
+                  id="$savePersonnelsMadani"
+                  class="btn btn-Teal h-38 w-100 hacen"
+                >
+                  2- حفظ بيانات المستخدمين المدنية والشخصية
+                </button>
+              </div>
+              <div class="field">
+                <button
+                  id="$saveExtraPersonnelsCard"
+                  class="btn btn-Indigo h-38 w-100 hacen"
+                >
+                  3- حفظ بيانات المستخدمين من بطاقة المعلومات
+                </button>
+              </div>
+            </div>
+            -->
+          </div>
+          <div
+            class="ui bottom text-black tab segment empty panel"
+            data-tab-id="tab1"
+          >
+            <div id="$notifyEmpty" class="mb-5"></div>
+            <div class="two fields fs-2">
+              <div class="field">
+                <label> اختر الجدول الذي تريد تفريغه </label>
+                <select
+                  id="databaseTables"
+                  class="ui py-1 dropdown hacen databaseTables"
+                >
+                  <option value="" selected="">-- اختر الجدول --</option>
+
+                  <option value="settings">الاعدادات</option>
+                  <option value="students">التلاميذ</option>
+                  <option value="personals">المستخدمين</option>
+                  <option value="divisions">الخريطة</option>
+                  <option value="isnad">الاسناد</option>
+                  <option value="exambuilder">تسيير الامتحانات</option>
+                  <option value="moyexambuilder">
+                    تسيير الامتحانات (المعدلات)
+                  </option>
+
+                  <option value="inoutstudents">الوافدين والمغادرين</option>
+                  <option value="stopstudents">المشطوبين</option>
+                </select>
+              </div>
+              <div class="field">
+                <label> &nbsp;&nbsp;&nbsp; </label>
+                <button
+                  type="button"
+                  id="emptyDatabase"
+                  class="btn btn-danger w-100 h-38 hacen emptyDatabase"
+                >
+                  تفريغ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

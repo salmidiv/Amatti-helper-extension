@@ -1,0 +1,317 @@
+<div id="papers-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">مطبوعات</div>
+  <div class="content">
+    <section class="ui form segment">
+      <div class="lds" id="$notifyPapers"></div>
+      <div class="tab" data-tab-id="tab2">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab2">
+          <a
+            class="hacen item tab tab-link active"
+            data-target="studentsPapers"
+          >
+            أوراق للتلاميذ
+          </a>
+          <a class="hacen item tab tab-link" data-target="personnelsPapers">
+            أوراق للمستخدمين
+          </a>
+        </div>
+        <div class="tabs-content1">
+          <div
+            class="ui bottom text-black fs-2 tab segment active studentsPapers panel"
+            data-tab-id="tab2"
+          >
+            <div
+              class="position-relative p-3 pr-4"
+              style="border-right: 5px solid #6b7280"
+            >
+              <select
+                id="$subDiv"
+                class="ui py-1 mb-4 dropdown hacen divsPapper"
+              ></select>
+              <div class="two fields">
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printDivisionList"
+                    class="btn btn-Pink hacen w-100 printDivisionList"
+                  >
+                    طباعة القائمة
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printDivisionNoteList"
+                    class="btn btn-Gray hacen w-100 printDivisionNoteList"
+                  >
+                    قائمة التنقيط (جميع الأطوار)
+                  </button>
+                </div>
+              </div>
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$downloadDivisionCertaficate"
+                    class="btn btn-info hacen w-100 downloadDivisionCertaficate"
+                  >
+                    طباعة الشهادات المدرسية
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$downloadDivisionIstimara"
+                    class="btn btn-Green hacen w-100 downloadDivisionIstimara"
+                  >
+                    استمارات المعلومات
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$scrapsniv"
+                    class="btn btn-Pink hacen w-100 scrapsniv"
+                  >
+                    جذاذات القسم (بالفرز)
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <div class="progress-papper hacen fs-2 text-center">
+                  <span class="title"></span>
+
+                  <span class="body"></span>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="position-relative p-3 pr-4"
+              style="border-right: 5px solid #f56565"
+            >
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    type="submit"
+                    class="btn btn-Gray hacen w-100 nisfBitaka"
+                  >
+                    بطاقات النصف داخلي
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$restoCards"
+                    class="btn btn-Violet hacen w-100 restoCards"
+                  >
+                    بطاقات المطعم
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="d-flex gap-1 mb-2 p-3 pr-4"
+              style="border-right: 5px solid #eab308"
+            >
+              <a
+                href="https://amatti.education.dz/scolarite/passage_eleves/etat_au_premier/impression"
+                target="_blank"
+                class="w-100 hacen text-center btn btn-Amber"
+              >
+                تصدير حالة اكتوبر لملف اكسل
+              </a>
+              <a
+                href="https://amatti.education.dz/scolarite/passage_eleves/dossier_eleve/impression"
+                target="_blank"
+                class="w-100 hacen text-center btn btn-Fuchsia"
+                id="print-list"
+              >
+                طباعة القوائم الإسمية التلاميذ
+              </a>
+              <button
+                class="w-100 hacen btn btn-Lime printAllScraps"
+                id="$printAllScraps"
+              >
+                جذاذات كل التلاميذ
+              </button>
+            </div>
+            <hr />
+            <div
+              class="position-relative p-3 mb-2 pr-4"
+              style="border-right: 5px solid #3b82f6"
+            >
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-danger printNisfList"
+                    id="$printNisfList"
+                  >
+                    طباعة قائمة النصف داخلي
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-Blue printExternal"
+                    id="$printExternal"
+                  >
+                    طباعة قائمة الخارجيين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    href="#"
+                    class="w-100 hacen btn btn-Lime printWafid"
+                    id="$printWafid"
+                  >
+                    طباعة قائمة التلاميذ الوافدين
+                  </button>
+                </div>
+              </div>
+              <div class="two fields">
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-Amber printStundentsOut"
+                    id="$printStundentsOut"
+                  >
+                    طباعة قائمة التلاميذ المغادرين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-Gray printStundentsStop"
+                    id="$printStundentsStop"
+                  >
+                    طباعة محاضر التلاميذ المشطوبين
+                  </button>
+                </div>
+              </div>
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-Green print-no-sport"
+                    id="print-no-sport"
+                    target="_blank"
+                  >
+                    طباعة قائمة التلاميذ المعفيين من الرياضة
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    class="w-100 hacen btn btn-Emerald printReplay"
+                    id="$printReplay"
+                  >
+                    طباعة محاضر التلاميذ المعيدين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    href="#"
+                    class="w-100 hacen btn btn-info print-pv-orientation"
+                    id="print-pv-orientation"
+                  >
+                    طباعة محاضر التوجيه والقبول
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment personnelsPapers panel"
+            id="personnelsPapers"
+            data-tab-id="tab2"
+          >
+            <div
+              class="position-relative p-3 pr-4"
+              style="border-right: 5px solid #6b7280"
+            >
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printTeacherListOne"
+                    class="btn btn-Pink hacen w-100 printTeacherListOne"
+                  >
+                    طباعة قائمة الأساتذة
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printTeacherListTwo"
+                    class="btn btn-Gray hacen w-100 printTeacherListTwo"
+                  >
+                    طباعة قائمة الأساتذة الرئيسين
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printTeacherListThree"
+                    class="btn btn-info hacen w-100 printTeacherListThree"
+                  >
+                    طباعة قائمة الأساتذة المكونين
+                  </button>
+                </div>
+              </div>
+              <div class="three fields">
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$printTeacherListFour"
+                    class="btn btn-Lime hacen w-100 printTeacherListFour"
+                  >
+                    القائمة الاجمالية للأساتذة
+                  </button>
+                </div>
+                <div class="field">
+                  <button
+                    type="submit"
+                    id="$scrapsTeachers"
+                    class="btn btn-Pink hacen w-100 scrapsTeachers"
+                  >
+                    جذاذات الأساتذة
+                  </button>
+                </div>
+                <div class="field"></div>
+              </div>
+              <div>
+                <div class="progress-papper hacen fs-2 text-center">
+                  <span class="title"></span>
+                  <span class="body"></span>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="position-relative p-3 pr-4"
+              style="border-right: 5px solid #6b7280"
+            >
+              <div class="flex gap-1">
+                <select class="ui py-1 h-38 dropdown hacen teachersL"></select>
+                <button
+                  class="hacen btn btn-Lime h-38 min-w-max teacherChahada"
+                >
+                  طباعة شهادة عمل
+                </button>
+                <button
+                  class="hacen btn btn-Violet h-38 min-w-max teacherKhadamat"
+                >
+                  طباعة مجمل خدمات
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

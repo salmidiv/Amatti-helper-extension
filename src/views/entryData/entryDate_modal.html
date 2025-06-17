@@ -1,0 +1,82 @@
+<style>
+  .certResults {
+    border-collapse: separate;
+    border-spacing: 0 5px; /* Adjust the second value to set the vertical spacing */
+  }
+  .certResults td,
+  .certResults th {
+    padding: 0px;
+    border: 0;
+  }
+</style>
+<div id="entryDate-modal" class="ui basic large modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">تغيير تاريخ الدخول</div>
+  <div class="content">
+    <div class="ui form segment">
+      <div class="tab" data-tab-id="tab3">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab3">
+          <a class="hacen item tab tab-link active" data-target="one">
+            تغيير تاريخ الدخول
+          </a>
+        </div>
+        <div class="tabs-content2">
+          <div
+            class="ui bottom text-black fs-2 tab segment active one panel"
+            data-tab-id="tab3"
+          >
+            <div class="note wr mb-3 fs-2 pr-6 hacen">
+              يمكنك تحديد التلاميذ الذين لا تريد تغيير تواريخ الدخول الخاصة بهم
+            </div>
+            <div class="flex gap-4">
+              <div class="w-100">
+                <label for="" class="mb-2 hacen"> اختر القسم </label>
+                <select id="nivs" class="h-38 p-1 px-3 hacen"></select>
+              </div>
+              <div class="w-100">
+                <label for="" class="mb-2 hacen"> اختر تاريخ الدخول </label>
+                <input type="date" class="h-38 p-1 px-3 hacen" id="entryDate" />
+              </div>
+              <div class="w-100">
+                <label for="" class="mb-2">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+                >
+                <button
+                  class="w-100 h-38 btn btn-danger hacen"
+                  id="changeEntryDate"
+                >
+                  تغيير تاريخ الدخول
+                </button>
+              </div>
+            </div>
+
+            <br />
+            <div class="w-100">
+              <table class="table hacen fs-3 text-center">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" id="chackAll" />
+
+                      تحديد الجميع
+                    </th>
+                    <th>الاسم واللقب</th>
+                    <th>تاريخ الميلاد</th>
+                    <th>رقم التسجيل</th>
+                    <th>تاريخ الدخول</th>
+                  </tr>
+                </thead>
+                <tbody id="list"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>

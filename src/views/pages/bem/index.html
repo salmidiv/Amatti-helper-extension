@@ -1,0 +1,1146 @@
+<head>
+  <title>مجلس القسم</title>
+  <style>
+        html {
+        scroll-behavior: smooth;
+    }
+     html,
+    body {
+        padding: 0;
+        margin: 0;
+        background: #fff !important;
+        direction: rtl;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    *,
+    a {
+        text-decoration: none;
+    }
+    .cur>* {
+        cursor: pointer;
+        user-select: none;
+    }
+    /* sidebare */
+    :root {
+        --headerB: #E0F2F1;
+        --navW: 230px;
+        --trans-1: all .1s ease;
+        --headerH: 60px;
+        --bwhite: #fff;
+        --contentB: #fffdfc;
+        --iconC: #08102b;
+        --linkC: #482dff;
+        --transB: rgba(241, 155, 234, .4);
+        --color: color: #656258;
+        --headerH: 40px;
+        --headerC: #343435;
+        --navW: 230px;
+        --widgetT: 15px;
+        --widgetTw: 400;
+        --widgetTac: #989b9f;
+        --widgetTa: 25px;
+        --success: #1ec73b /* #4caf50*/;
+        --failed:#f92824 /*#ef5350*/;
+        --bg-success: rgb(76 175 80 / 50%);
+        --bg-failed:rgb(239 83 80 / 50%);
+
+
+    }
+
+    .sidebar {
+        width: var(--navW);
+        flex-shrink: 0;
+        position: relative;
+        transition: var(--trans-1);
+        z-index: 1;
+    }
+
+    .menuBar {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+
+    .menuBars {
+        display: flex;
+        height: 100vh;
+        font-size: 1.1rem;
+        position: relative;
+        box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+        background: var(--contentB);
+    }
+
+    .menuMen {
+        overflow: hidden;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .menuList {
+        list-style: none;
+        margin: 0;
+        padding: 0 20px;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .menuList>li {
+        position: relative;
+    }
+
+    .menuMen ul li>*,
+    .menuList .a {
+        color: var(--color);
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        position: relative;
+        width: calc(100% + 10px);
+        left: -5px;
+        right: -5px;
+        border-radius: 8px;
+        transition: var(--trans-1);
+    }
+
+    svg.line,
+    svg .line {
+        fill: none !important;
+        stroke: var(--iconC);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1;
+    }
+
+    svg.line .svgC {
+        fill: none;
+        stroke: var(--linkC);
+    }
+
+    .menuList svg {
+        width: 20px;
+        height: 20px;
+        opacity: .8;
+    }
+
+    .menuList .a>* {
+        margin: 0 5px;
+    }
+
+    .menuList .a.active {
+        background: var(--headerB);
+    }
+
+    .menuList .a:hover {
+        background: var(--transB);
+    }
+
+    .menuList svg {
+        flex-shrink: 0;
+    }
+
+    .menuList .n,
+    .menuMen ul li>* {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1 0 calc(100% - 64px);
+    }
+
+    .h_header {
+        width: 100%;
+        z-index: 10;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 0 15px rgb(0 0 0 / 7%);
+        position: relative;
+        height: var(--headerH);
+        color: var(--headerC);
+        background: var(--headerB);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .blogCont {
+        width: calc(100% - var(--navW));
+        padding-top: 30px;
+        flex-grow: 1;
+        padding: 20px 0 0;
+        position: relative;
+        transition: var(--trans-1);
+    }
+
+    .blogCont .secIn {
+        padding-left: 25px;
+        padding-right: 25px;
+        margin: 0 auto;
+        max-width: var(--contentW);
+        --contentW: 1280px;
+    }
+
+    .main {
+        display: flex;
+    }
+
+    .widget {
+        margin: 10px 0 0;
+        padding: 20px;
+        background: var(--bwhite);
+        box-shadow: 0 2px 15px rgb(0 0 0 / 4%);
+        border-radius: 10px;
+    }
+
+    .widget .title {
+        margin: 0 0 25px;
+        font-size: 1.4rem;
+        font-weight: var(--widgetTw);
+        position: relative;
+        display: flex;
+        align-items: center;
+        column-gap: 0.6rem;
+    }
+
+    .widget .title svg.line {
+        width: 30px;
+        height: 30px;
+        opacity: .8;
+    }
+
+    .widget .title::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: var(--widgetTa);
+        margin: 0 10px;
+        border-bottom: 1px solid var(--widgetTac);
+        opacity: .5;
+    }
+
+    .widget .title::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        opacity: .4;
+        transform: rotate(270deg);
+        background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 276.167 276.167' fill='%23989b9f'><path d='M33.144,2.471C15.336,2.471,0.85,16.958,0.85,34.765s14.48,32.293,32.294,32.293s32.294-14.486,32.294-32.293 S50.951,2.471,33.144,2.471z'/><path d='M137.663,2.471c-17.807,0-32.294,14.487-32.294,32.294s14.487,32.293,32.294,32.293c17.808,0,32.297-14.486,32.297-32.293 S155.477,2.471,137.663,2.471z'/><path d='M243.873,67.059c17.804,0,32.294-14.486,32.294-32.293S261.689,2.471,243.873,2.471s-32.294,14.487-32.294,32.294 S226.068,67.059,243.873,67.059z'/><path d='M243.038,170.539c17.811,0,32.294-14.483,32.294-32.293c0-17.811-14.483-32.297-32.294-32.297 s-32.306,14.486-32.306,32.297C210.732,156.056,225.222,170.539,243.038,170.539z'/><path d='M136.819,170.539c17.804,0,32.294-14.483,32.294-32.293c0-17.811-14.478-32.297-32.294-32.297 c-17.813,0-32.294,14.486-32.294,32.297C104.525,156.056,119.012,170.539,136.819,170.539z'/><path d='M243.771,209.108c-17.804,0-32.294,14.483-32.294,32.294c0,17.804,14.49,32.293,32.294,32.293 c17.811,0,32.294-14.482,32.294-32.293S261.575,209.108,243.771,209.108z'/></svg>") center / 20px no-repeat;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        width: calc(100% + 20px);
+        left: -10px;
+        right: -10px;
+        align-items: stretch;
+    }
+
+    .content.three .item {
+        flex: 0 0 calc(33.33% - 20px);
+        width: calc(33.33% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .content.two .item {
+        flex: 0 0 calc(50% - 20px);
+        width: calc(50% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .content.four .item {
+        flex: 0 0 calc(25% - 20px);
+        width: calc(25% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .content.five .item {
+        flex: 0 0 calc(20% - 20px);
+        width: calc(20% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .content .item {
+        background: var(--contentB);
+        box-shadow: 0 5px 35px rgb(0 0 0 / 7%);
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+        position: relative;
+        position: relative;
+        overflow: hidden;
+    }
+    .border {
+        border: 1px solid var(--transB);
+    }
+    .c_success {
+        color: var(--success)!important;
+    }
+    .c_failed {
+        color: var(--failed)!important;
+    }
+    .b_success {
+        background: var(--bg-success)!important;
+    }
+    .b_failed {
+        background: var(--bg-failed)!important;
+    }
+     .table th {
+        color: #fff!important;
+    }
+    .table td, .table th {
+        border: 2px solid var(--iconC);
+    }
+        .niv-title::before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          width: var(--widgetTa);
+          margin: 0 10px;
+          border-bottom: 1px solid var(--widgetTac);
+          opacity: 0.5;
+        }
+
+        .niv-title::after {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          width: var(--widgetTa);
+          margin: 0 10px;
+          border-bottom: 1px solid var(--widgetTac);
+          opacity: 0.5;
+        }
+  </style>
+</head>
+
+<body class="hacen">
+  <div class="preloader d-none" id="preloader">
+    <div class="overflow"></div>
+    <span class="preloader-spin"></span>
+  </div>
+  <div class="" id="$con">
+    <header class="h_header" id="councilHead">
+      <div class="head p-3">
+        <h2 class="m-0 logo d-flex align-items-center">
+          مساعد الرقمنة -
+          <span id="version" class="badge badge-primary">0.1.89</span>
+        </h2>
+        <!--<button class="btn btn-dark">الدعم المادي</button>-->
+      </div>
+    </header>
+    <div class="main">
+      <aside class="sidebar">
+        <div class="menuBar">
+          <div class="menuBars">
+            <div class="menuMen section">
+              <select
+                class="form-control hacen mb-3 w-100"
+                id="$nivs"
+                style="width: 85% !important; margin: 0 auto"
+              >
+                <option value="">-- اختر القسم --</option>
+                <option value="1">كل المؤسسة</option>
+              </select>
+              <ul class="menuList">
+                <li class="hm mb-3">
+                  <a class="a fs-3 active" href="#s_one" itemprop="url">
+                    <svg
+                      class="line"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g transform="translate(2.200000, 2.000000)">
+                        <path
+                          class="svgC"
+                          d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                        ></path>
+                        <path
+                          d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name">
+                      احصائيات حسب المعدلات
+                    </span>
+                  </a>
+                </li>
+
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_two" itemprop="url">
+                    <svg
+                      class="line"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g transform="translate(2.200000, 2.000000)">
+                        <path
+                          class="svgC"
+                          d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                        ></path>
+                        <path
+                          d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name"> احصائيات حسب المواد </span>
+                  </a>
+                </li>
+
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_three" itemprop="url">
+                    <svg
+                      class="line"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g transform="translate(2.200000, 2.000000)">
+                        <path
+                          class="svgC"
+                          d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                        ></path>
+                        <path
+                          d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name"> النجاح حسب الاختبار </span>
+                  </a>
+                </li>
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_four" itemprop="url">
+                    <svg
+                      class="line"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g transform="translate(2.200000, 2.000000)">
+                        <path
+                          class="svgC"
+                          d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                        ></path>
+                        <path
+                          d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name">
+                      النجاح حسب التقويم المستمر
+                    </span>
+                  </a>
+                </li>
+
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_five" itemprop="url">
+                    <svg class="line" viewBox="0 0 24 24">
+                      <g transform="translate(2.000000, 4.000000)">
+                        <path
+                          class="svgC"
+                          d="M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z"
+                        ></path>
+                        <path
+                          d="M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name">
+                      معدل المادة والاختبار
+                    </span>
+                  </a>
+                </li>
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_six" itemprop="url">
+                    <svg class="line" viewBox="0 0 24 24">
+                      <g transform="translate(2.000000, 4.000000)">
+                        <path
+                          class="svgC"
+                          d="M13.1643,8.0521 C13.1643,9.7981 11.7483,11.2141 10.0023,11.2141 C8.2563,11.2141 6.8403,9.7981 6.8403,8.0521 C6.8403,6.3051 8.2563,4.8901 10.0023,4.8901 C11.7483,4.8901 13.1643,6.3051 13.1643,8.0521 Z"
+                        ></path>
+                        <path
+                          d="M0.7503,8.0521 C0.7503,11.3321 4.8923,15.3541 10.0023,15.3541 C15.1113,15.3541 19.2543,11.3351 19.2543,8.0521 C19.2543,4.7691 15.1113,0.7501 10.0023,0.7501 C4.8923,0.7501 0.7503,4.7721 0.7503,8.0521 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name">
+                      معدل المادة والتقويم
+                    </span>
+                  </a>
+                </li>
+
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_seven" itemprop="url">
+                    <svg class="line" viewBox="0 0 24 24">
+                      <g transform="translate(2.749500, 2.549500)">
+                        <path
+                          d="M6.809,18.9067 C3.137,18.9067 9.41469125e-14,18.3517 9.41469125e-14,16.1277 C9.41469125e-14,13.9037 3.117,11.8997 6.809,11.8997 C10.481,11.8997 13.617,13.8847 13.617,16.1077 C13.617,18.3307 10.501,18.9067 6.809,18.9067 Z"
+                        ></path>
+                        <path
+                          d="M6.809,8.728 C9.219,8.728 11.173,6.774 11.173,4.364 C11.173,1.954 9.219,-2.48689958e-14 6.809,-2.48689958e-14 C4.399,-2.48689958e-14 2.44496883,1.954 2.44496883,4.364 C2.436,6.766 4.377,8.72 6.778,8.728 L6.809,8.728 Z"
+                        ></path>
+                        <path
+                          class="svgC"
+                          d="M14.0517,7.5293 C15.4547,7.1543 16.4887007,5.8753 16.4887007,4.3533 C16.4897,2.7653 15.3627,1.4393 13.8647,1.1323"
+                        ></path>
+                        <path
+                          class="svgC"
+                          d="M14.7113,11.104 C16.6993,11.104 18.3973,12.452 18.3973,13.655 C18.3973,14.364 17.8123,15.092 16.9223,15.301"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name"> 05 الأوائل والأواخر </span>
+                  </a>
+                </li>
+
+                <li class="hm mb-3">
+                  <a class="a fs-3" href="#s_eight" itemprop="url">
+                    <svg
+                      class="line"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g transform="translate(2.200000, 2.000000)">
+                        <path
+                          class="svgC"
+                          d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                        ></path>
+                        <path
+                          d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <span class="n" itemprop="name"> احصائيات الاجازات </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="blogCont">
+        <div class="secIn mb-5 boysGirlStats">
+          <h2 class="fs-1 hacen mb-5 text-center niv-title">
+            مجلس القسم لقسم السنة: رابعة متوسط 01
+          </h2>
+          <section id="s_one" class="widget border position-relative mb-5">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب الجنس
+            </h2>
+            <div class="content two">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-2 d-flex f-column text-center w-100">
+                    الذكور
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >120</span
+                    >
+                  </h3>
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    الناجحين
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >40</span
+                    >
+                  </h3>
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    الراسبين
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >80</span
+                    >
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-2 d-flex f-column text-center w-100">
+                    الإناث
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >120</span
+                    >
+                  </h3>
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    الناجحات
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >120</span
+                    >
+                  </h3>
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    الراسبات
+                    <span class="fw-bold text-center w-100 fs-0 count-number"
+                      >120</span
+                    >
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_two" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب المواد
+            </h2>
+            <div class="content five">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    علوم الطبيعة والحياة
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>10.00</span>
+                      <span>50%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    اللغة العربية
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>7.43</span>
+                      <span>39.40%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_three" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب الاختبار
+            </h2>
+            <div class="content five">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    علوم الطبيعة والحياة
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>10.00</span>
+                      <span>50%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    اللغة العربية
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>7.43</span>
+                      <span>39.40%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_four" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب التقويم المستمر
+            </h2>
+            <div class="content five">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    علوم الطبيعة والحياة
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>10.00</span>
+                      <span>50%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    اللغة العربية
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>7.43</span>
+                      <span>39.40%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_five" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب الاختبار ومعدل المادة
+            </h2>
+            <div class="content five">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    علوم الطبيعة والحياة
+                    <span
+                      class="d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>الاختبار</span>
+                      <span>المعدل</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>11.49</span>
+                      <span>9.80</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>50%</span>
+                      <span>43%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    الرياضيات
+                    <span
+                      class="d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>الاختبار</span>
+                      <span>المعدل</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>9.70</span>
+                      <span>8.54</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>48%</span>
+                      <span>39.75%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_six" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات حسب التقويم ومعدل المادة
+            </h2>
+            <div class="content five">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    علوم الطبيعة والحياة
+                    <span
+                      class="d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>التقويم</span>
+                      <span>المعدل</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>11.49</span>
+                      <span>9.80</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>50%</span>
+                      <span>43%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    الرياضيات
+                    <span
+                      class="d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>التقويم</span>
+                      <span>المعدل</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>9.70</span>
+                      <span>8.54</span>
+                    </span>
+                    <span
+                      class="fw-bold d-flex justify-content-between text-center w-100 mt-3 fs-2"
+                    >
+                      <span>48%</span>
+                      <span>39.75%</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_seven" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              الخمسة الأوائل والأواخر
+            </h2>
+            <div class="content two">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_success"
+                  >
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بوهزيلة راضية</span>
+                      <span>17.56</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بركات مليكة</span>
+                      <span>16.11</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بركات حليمة</span>
+                      <span>14.61</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بلقاسمي رحاب غنية</span>
+                      <span>13.06</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> باهية نوال </span>
+                      <span>12.11</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3
+                    class="m-0 fs-2 d-flex f-column text-center w-100 c_failed"
+                  >
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بوزيد عبد الحميد </span>
+                      <span>4.81</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> بركات أحمد </span>
+                      <span>4.33</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> دهداه عبد القادر</span>
+                      <span>3.89</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> برير ياسين</span>
+                      <span>3.17</span>
+                    </span>
+                    <span
+                      class="d-flex justify-content-between text-center mb-3 w-100 fs-2"
+                    >
+                      <span> رزاقي جيلالي</span>
+                      <span>2.33</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="s_eight" class="widget border position-relative">
+            <h2 class="title">
+              <svg
+                class="line"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(2.200000, 2.000000)">
+                  <path
+                    class="svgC"
+                    d="M11.4786,1.3486 C10.7706,2.1636 10.4886,7.2886 11.3116,8.1126 C12.1346,8.9346 17.0796,8.5186 18.2676,7.5836 C21.1256,5.3326 13.7386,-1.2534 11.4786,1.3486 Z"
+                  ></path>
+                  <path
+                    d="M15.9376,11.79 C17.0216,12.874 14.1476,19.054 8.4516,19.054 C4.1976,19.054 0.7496,15.606 0.7496,11.353 C0.7496,6.053 5.9786,2.663 7.4776,4.162 C8.3406,5.025 7.3686,9.086 8.9166,10.635 C10.4646,12.184 14.8536,10.706 15.9376,11.79 Z"
+                  ></path>
+                </g>
+              </svg>
+              احصائيات الاجازات
+            </h2>
+            <div class="content four">
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-2 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span>امتياز</span>
+                      <span>17</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span>تهنئة</span>
+                      <span>17</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span>تشجيع</span>
+                      <span>6</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span>لوحة شرف</span>
+                      <span>12</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span> 10 - 11.99</span>
+                      <span>9</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span> 9 - 9.99</span>
+                      <span>5</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span> 9 - 8.99</span>
+                      <span>00</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="item border cur">
+                <div class="stat d-flex">
+                  <h3 class="m-0 fs-1 d-flex f-column text-center w-100">
+                    <span
+                      class="d-flex justify-content-between text-center w-100 fs-1"
+                    >
+                      <span> 0 - 7.99</span>
+                      <span>34</span>
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>

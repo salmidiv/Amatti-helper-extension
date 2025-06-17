@@ -1,0 +1,197 @@
+<head>
+  <title>استدعاء</title>
+  <style>
+    @page {
+      size: A4;
+    }
+
+    .place {
+      font-size: 1.27rem;
+      font-weight: bold;
+      position: absolute;
+      right: 167px;
+    }
+
+    .ist {
+      border: 1px solid;
+      padding: 0.4rem;
+    }
+
+    .ist:first-child {
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.9rem 0.75rem !important;
+    }
+    .input-control {
+      font-size: 1.1rem;
+      height: auto;
+      width: 100%;
+      background: #fff;
+      border: 1px solid rgba(34, 36, 38, 0.15);
+      border-radius: 0.28571429rem;
+      box-shadow: 0 0 0 0 transparent inset;
+      padding: 0.62em 1em;
+      color: rgba(0, 0, 0, 0.87);
+      -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+      transition: color 0.1s ease, border-color 0.1s ease;
+    }
+    @media print {
+      .input-control {
+        border: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="print A4 hacen">
+  <div class="sheet p-10mm jaz" dir="rtl">
+    <div class="ist">
+      <div id="head"></div>
+      <div class="subject">
+        <h1 class="m-1 fs-0 text-center">استدعاء</h1>
+      </div>
+      <!-- /page title -->
+      <section class="content">
+        <p class="fs-xl m-1">
+          إلى السيد:
+          <input
+            type="text"
+            id="$father"
+            placeholder="أكتب هنا ..."
+            class="input-control hacen h-38 w-75"
+          />
+        </p>
+        <div class="d-flex">
+          <div class="w-70">
+            <p class="fs-xl m-1">
+              المرجو منكم الحضور يوم:
+              <input
+                type="text"
+                id="$date"
+                placeholder="أكتب اليوم هنا ..."
+                class="input-control hacen h-38 w-50"
+              />
+            </p>
+          </div>
+          <div class="w-50">
+            <p class="fs-xl m-1">
+              على الساعة:
+              <input
+                type="text"
+                id="$time"
+                placeholder="أكتب الأسباب هنا ..."
+                class="input-control hacen h-38 w-50"
+              />
+            </p>
+          </div>
+        </div>
+        <p class="fs-xl m-1">
+          لمقابلة:
+          <input
+            type="text"
+            id="$prof"
+            placeholder="أكتب هنا ..."
+            class="input-control hacen h-38 w-75"
+          />
+        </p>
+        <p class="fs-xl m-1 text-center d-flex">
+          <span> للأسباب التالية: </span>
+          <textarea
+            id="$sabab"
+            class="input-control hacen h-38 w-75"
+            cols="87"
+            max-rows="6"
+            rows="6"
+            style="height: 80px !important; resize: none"
+            placeholder="أكتب الأسباب هنا ..."
+          ></textarea>
+        </p>
+        <div id="footer"></div>
+
+        <p class="fs-xl m-1 d-flex flex-end">
+          <input
+            type="text"
+            value="المستشار الرئيسي للتربية"
+            class="input-control hacen h-38 w-30"
+          />
+          <br /><br />
+        </p>
+      </section>
+    </div>
+    <div class="ist">
+      <div id="head1"></div>
+      <div class="subject">
+        <h1 class="m-1 text-center fs-0">استدعاء</h1>
+      </div>
+      <!-- /page title -->
+      <section class="content fs-4">
+        <p class="fs-xl m-1">
+          إلى السيد:
+          <input
+            type="text"
+            id="$father1"
+            placeholder="أكتب هنا ..."
+            class="input-control hacen h-38 w-75"
+          />
+        </p>
+        <div class="d-flex mt-3">
+          <div class="w-70">
+            <p class="fs-xl m-1">
+              المرجو منكم الحضور يوم:
+              <input
+                type="text"
+                id="$date2"
+                placeholder="أكتب اليوم هنا ..."
+                class="input-control hacen h-38 w-50"
+              />
+            </p>
+          </div>
+          <div class="w-50">
+            <p class="fs-xl m-1">
+              على الساعة:
+              <input
+                type="text"
+                id="$time2"
+                placeholder="أكتب هنا ..."
+                class="input-control hacen h-38 w-50"
+              />
+            </p>
+          </div>
+        </div>
+        <p class="fs-xl m-1">
+          لمقابلة:
+          <input
+            type="text"
+            id="$prof2"
+            placeholder="أكتب هنا ..."
+            class="input-control hacen h-38 w-75"
+          />
+        </p>
+        <p class="fs-xl m-1 text-center d-flex">
+          <span> للأسباب التالية: </span>
+          <textarea
+            id="$sabab2"
+            class="input-control hacen h-38 w-75"
+            cols="87"
+            max-rows="6"
+            rows="6"
+            style="height: 80px !important; resize: none"
+            placeholder="أكتب هنا ..."
+          ></textarea>
+        </p>
+        <div id="footer1"></div>
+        <p class="fs-xl m-1 d-flex flex-end">
+          <input
+            type="text"
+            value="المستشار الرئيسي للتربية"
+            class="input-control hacen h-38 w-30"
+          />
+          <br /><br />
+        </p>
+      </section>
+    </div>
+  </div>
+  <!-- /sheet -->
+</body>

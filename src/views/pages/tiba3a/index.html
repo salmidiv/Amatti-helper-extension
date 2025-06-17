@@ -1,0 +1,34 @@
+<div class="action-btn flex">
+  <button id="add_admin_name" class="btn btn-Sky hacen fs-2 d-none">
+    إدراج اسم الأستاذ المسؤول
+  </button>
+  <button id="add_nbr_to_paper" class="btn btn-Lime hacen fs-2">
+    ترقيم الكشوف
+  </button>
+  <button id="add_modir_name" class="btn btn-Fuchsia hacen fs-2">
+    إدراج اسم المدير
+  </button>
+  <button id="color_small_moy" class="btn btn-Rose hacen fs-2">
+    تلوين المعدلات أقل من 10
+  </button>
+  <input id="add_stamp" type="file" style="display: none" />
+  <button class="btn btn-Amber hacen fs-2" onclick="$('#add_stamp').click();">
+    إضافة الختم
+  </button>
+</div>
+
+<style>
+  .action-btn {
+    position: fixed;
+    bottom: 44px;
+    z-index: 100;
+    left: 130px;
+    gap: 1rem;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+  }
+</style>

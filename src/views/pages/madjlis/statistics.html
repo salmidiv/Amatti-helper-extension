@@ -1,0 +1,160 @@
+<div id="statistics-modal" class="ui basic small modal biarabi">
+  <div class="ui header hacen fs-1 text-white py-0">تحليل النتائج</div>
+  <div class="content">
+    <section class="ui form segment">
+      <div class="lds" id="$notifyPapers"></div>
+      <div class="tab" data-tab-id="tab3">
+        <div class="ui secondary menu mb-3 fs-3 tabs" data-tab-id="tab3">
+          <a class="hacen item tab tab-link active" data-target="data">
+            جلب البيانات
+          </a>
+          <a class="hacen item tab tab-link d-none" data-target="statistcs">
+            حجز الملاحظات
+          </a>
+        </div>
+        <div class="tabs-content1">
+          <div
+            class="ui bottom text-black fs-2 tab segment active data panel"
+            data-tab-id="tab3"
+          >
+            <div class="w-100 border-1 p-3 br-4">
+              <div class="note hacen wr d-flex p-2 fs-2 w-100 mb-2">
+                <div class="pr-6">
+                  للحصول على تحليل نتائج الاختبار فقط، يجب اختيار الفصل الدراسي
+                  ثم اختيار القسم على حدة والضغط على أيقونة حفظ نقاط التلاميذ
+                </div>
+              </div>
+              <div class="d-flex gap-1 mb-3 align-items-center between-content">
+                <h2 class="fs-2 m-0 hacen">تحميل بيانات التحليل</h2>
+                <button
+                  id="$dropStatData"
+                  class="btn btn-danger hacen fs-3 dropStatData"
+                >
+                  تفريغ بيانات التحليل
+                </button>
+              </div>
+              <div class="d-flex gap-1">
+                <select
+                  class="input-control hacen h-38 fs-2 no p-0 anneschool"
+                  id="anneschool"
+                >
+                  <option value="" selected="selected">
+                    --الرجاء الاختيار ----
+                  </option>
+                  <option value="20243">الفصل الثالث 2024-2025</option>
+                  <option value="20242">الفصل الثاني 2024-2025</option>
+                  <option value="20241">الفصل الأول 2024-2025</option>
+                  <option value="20233">الفصل الثالث 2023-2024</option>
+                  <option value="20232">الفصل الثاني 2023-2024</option>
+                  <option value="20231">الفصل الأول 2023-2024</option>
+                  <option value="20223">الفصل الثالث 2022-2023</option>
+                  <option value="20222">الفصل الثاني 2022-2023</option>
+                  <option value="20221">الفصل الأول 2022-2023</option>
+                  <option value="20213">الفصل الثالث 2021-2022</option>
+                  <option value="20212">الفصل الثاني 2021-2022</option>
+                  <option value="20211">الفصل الأول 2021-2022</option>
+                  <option value="20202">الفصل الثاني 2020-2021</option>
+                  <option value="20201">الفصل الأول 2020-2021</option>
+                  <option value="20192">الفصل الثاني 2019-2020</option>
+                  <option value="20191">الفصل الأول 2019-2020</option>
+                  <option value="20183">الفصل الثالث 2018-2019</option>
+                  <option value="20182">الفصل الثاني 2018-2019</option>
+                  <option value="20181">الفصل الأول 2018-2019</option>
+                  <option value="20173">الفصل الثالث 2017-2018</option>
+                  <option value="20172">الفصل الثاني 2017-2018</option>
+                  <option value="20171">الفصل الأول 2017-2018</option>
+                </select>
+
+                <select
+                  class="form-control hacen no p-0 divissionExt"
+                  id="$divi"
+                ></select>
+                <select class="d-none" id="hiddenDivs"></select>
+              </div>
+              <div class="d-flex gap-1 mt-3">
+                <button
+                  id="$finalResults"
+                  class="btn btn-info hacen fs-3 w-100 finalResults"
+                >
+                  حفظ نتائج التلاميذ
+                </button>
+                <button
+                  id="$finalResultsMoys"
+                  class="btn btn-dark hacen fs-3 w-100 finalResultsMoys"
+                >
+                  حفظ المعدلات الفصلية
+                </button>
+                <button
+                  id="$studentsNotes"
+                  class="btn btn-Indigo hacen w-100 studentsNotes"
+                >
+                  حفظ نقاط التلاميذ (التقويم والاختبار)
+                </button>
+              </div>
+              <div class="mt-4 error-catch hacen"></div>
+              <div class="mt-4">
+                <h2 id="waitText" class="fs-2 hacen text-center"></h2>
+              </div>
+              <h2 class="hacen fs-2 fw-bold">عرض بيانات الاحصاء</h2>
+              <div class="d-flex gap-1 mt-3">
+                <!--endStats-->
+                <a
+                  href="/end-stats"
+                  target="_blank"
+                  class="btn btn-info w-100 fs-2 hacen text-center"
+                >
+                  محضر النتائج الفصلية
+                </a>
+
+                <a
+                  href="/ijazat"
+                  target="_blank"
+                  class="btn btn-Lime w-100 fs-2 hacen text-center"
+                >
+                  التلاميذ المجازين
+                </a>
+              </div>
+              <div class="d-flex gap-1 mt-3">
+                <!--endStats-->
+                <a
+                  href="/ostad-state"
+                  target="_blank"
+                  class="btn btn-Pink text-center w-100 fs-2 hacen"
+                >
+                  محضر مجلس القسم (يسلم للأستاذ)
+                </a>
+              </div>
+              <div class="d-flex gap-1 mt-3">
+                <!--endStats-->
+                <a
+                  href="/end-stats-comp"
+                  target="_blank"
+                  class="btn btn-info text-center w-100 fs-2 hacen"
+                >
+                  وثيقة مقارنة بين نتائج الفصلين
+                </a>
+                <a
+                  href="/module_stats_div"
+                  target="_blank"
+                  class="btn btn-dark text-center w-100 fs-2 hacen"
+                >
+                  دراسة حقيقية لمعدل الفرض والاختبار
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ui bottom text-black fs-2 tab segment notes panel"
+            data-tab-id="tab3"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <div class="actions">
+      <div class="cancel btn text-center btn-danger hacen w-100">
+        <i class="remove icon"></i>
+        خروج من النافذة
+      </div>
+    </div>
+  </div>
+</div>
